@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dipanshu Soni — Graphic Designer & Video Editor</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --pink: #e91e8c;
+    --purple: #7c3aed;
+    --cyan: #06b6d4;
+    --amber: #f59e0b;
+    --glass-bg: rgba(255,255,255,0.06);
+    --glass-border: rgba(255,255,255,0.13);
+    --glass-hover: rgba(255,255,255,0.1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #07070f;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── BLOBS ── */
+  .blobs {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.45;
+    animation: blobFloat 14s ease-in-out infinite;
+  }
+  .b1 { width: 600px; height: 600px; background: #7c3aed; top: -200px; left: -200px; animation-delay: 0s; }
+  .b2 { width: 450px; height: 450px; background: #e91e8c; top: 300px; right: -150px; animation-delay: -5s; }
+  .b3 { width: 380px; height: 380px; background: #06b6d4; bottom: 100px; left: 50px; animation-delay: -9s; }
+  .b4 { width: 320px; height: 320px; background: #f59e0b; bottom: -100px; right: 250px; animation-delay: -3s; }
+  .b5 { width: 250px; height: 250px; background: #10b981; top: 60%; left: 40%; animation-delay: -7s; }
+
+  @keyframes blobFloat {
+    0%,100% { transform: translate(0,0) scale(1); }
+    33% { transform: translate(50px,-40px) scale(1.06); }
+    66% { transform: translate(-30px,30px) scale(0.96); }
+  }
+
+  /* Grain */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px;
+    pointer-events: none;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(7,7,15,0.6);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    background: linear-gradient(135deg, #fff 40%, #e91e8c);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .nav-links { display: flex; gap: 30px; list-style: none; }
+  .nav-links a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    letter-spacing: 0.4px;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: #fff; }
+
+  /* ── WRAPPER ── */
+  .wrap {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 28px 100px;
+  }
+
+  /* ── GLASS ── */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+  }
+
+  /* ── SECTION LABEL ── */
+  .sec-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 20px;
+  }
+
+  .section { margin-bottom: 80px; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 90px;
+  }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+  }
+  .avail {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  .dot-green {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 10px #4ade80;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    margin-bottom: 8px;
+  }
+  .hero-title-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 3vw, 26px);
+    font-style: italic;
+    background: linear-gradient(135deg, #e91e8c, #7c3aed);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    margin-bottom: 22px;
+    letter-spacing: -0.5px;
+  }
+  .hero-bio {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.8;
+    max-width: 440px;
+    margin-bottom: 36px;
+  }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .btn-pink {
+    padding: 13px 28px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    background: linear-gradient(135deg, #e91e8c, #7c3aed);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .btn-pink:hover { opacity: 0.82; transform: translateY(-2px); }
+
+  .btn-ghost {
+    padding: 12px 26px;
+    border-radius: 100px;
+    font-size: 14px;
+    background: var(--glass-bg);
+    color: rgba(255,255,255,0.7);
+    border: 1px solid var(--glass-border);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    backdrop-filter: blur(10px);
+    transition: background 0.2s;
+  }
+  .btn-ghost:hover { background: var(--glass-hover); }
+
+  /* Profile photo */
+  .profile-wrap {
+    position: relative;
+    flex-shrink: 0;
+  }
+  .profile-ring {
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, #e91e8c, #7c3aed, #06b6d4);
+    box-shadow: 0 0 60px rgba(233,30,140,0.35);
+  }
+  .profile-img {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
+  .profile-badge {
+    position: absolute;
+    bottom: 8px; right: -10px;
+    background: linear-gradient(135deg, #e91e8c, #7c3aed);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    border: 2px solid #07070f;
+  }
+
+  /* ── STATS ── */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .stat-card {
+    padding: 28px 20px;
+    text-align: center;
+    transition: transform 0.22s;
+    cursor: default;
+  }
+  .stat-card:hover { transform: translateY(-4px); }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff 50%, #e91e8c);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-lbl { font-size: 12px; color: rgba(255,255,255,0.38); text-transform: uppercase; letter-spacing: 1px; }
+
+  /* ── PORTFOLIO TABS ── */
+  .tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
+  .tab {
+    padding: 9px 20px;
+    border-radius: 100px;
+    font-size: 13px;
+    cursor: pointer;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    color: rgba(255,255,255,0.55);
+    transition: all 0.2s;
+    backdrop-filter: blur(10px);
+  }
+  .tab.active, .tab:hover {
+    background: linear-gradient(135deg, #e91e8c, #7c3aed);
+    border-color: transparent;
+    color: #fff;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .port-item {
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    aspect-ratio: 1/1;
+    transition: transform 0.25s;
+  }
+  .port-item:hover { transform: scale(1.03); }
+  .port-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .port-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(7,7,15,0.85) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+  }
+  .port-item:hover .port-overlay { opacity: 1; }
+  .port-tag {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+    background: rgba(233,30,140,0.8);
+    backdrop-filter: blur(4px);
+  }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0,0,0,0.92);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 90vw; max-height: 88vh; border-radius: 12px; object-fit: contain; }
+  .lightbox-close {
+    position: absolute;
+    top: 20px; right: 24px;
+    font-size: 32px;
+    cursor: pointer;
+    color: rgba(255,255,255,0.6);
+    line-height: 1;
+    background: none; border: none;
+  }
+  .lightbox-close:hover { color: #fff; }
+
+  /* ── SKILLS ── */
+  .skills-section { padding: 32px 36px; }
+  .skills-group { margin-bottom: 24px; }
+  .skills-group-title {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 12px;
+  }
+  .pills { display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill {
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-size: 13px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    color: rgba(255,255,255,0.7);
+    transition: all 0.2s;
+    cursor: default;
+  }
+  .pill:hover { background: rgba(233,30,140,0.18); color: #f9a8d4; border-color: rgba(233,30,140,0.35); }
+  .pill.cyan:hover { background: rgba(6,182,212,0.18); color: #67e8f9; border-color: rgba(6,182,212,0.35); }
+  .pill.amber:hover { background: rgba(245,158,11,0.18); color: #fcd34d; border-color: rgba(245,158,11,0.35); }
+
+  /* ── PRICING ── */
+  .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .price-card {
+    padding: 32px 28px;
+    position: relative;
+    transition: transform 0.22s;
+  }
+  .price-card:hover { transform: translateY(-4px); }
+  .price-card.featured { border-color: rgba(233,30,140,0.5); }
+  .price-card.featured::before {
+    content: '⭐ Most Popular';
+    position: absolute;
+    top: -14px; left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #e91e8c, #7c3aed);
+    font-size: 11px;
+    padding: 5px 18px;
+    border-radius: 100px;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+  }
+  .price-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+  .price-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff, #e91e8c);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    margin-bottom: 4px;
+  }
+  .price-rev {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--glass-border);
+  }
+  .price-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    margin-bottom: 22px;
+  }
+
+  /* ── EXPERIENCE / TIMELINE ── */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, #e91e8c, #7c3aed, transparent);
+  }
+  .tl-item { position: relative; margin-bottom: 36px; }
+  .tl-dot {
+    position: absolute;
+    left: -24px; top: 4px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e91e8c, #7c3aed);
+    box-shadow: 0 0 12px rgba(233,30,140,0.5);
+  }
+  .tl-year {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(233,30,140,0.8);
+    margin-bottom: 4px;
+  }
+  .tl-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .tl-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.7;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .edu-card { padding: 24px 22px; transition: transform 0.2s; }
+  .edu-card:hover { transform: translateY(-3px); }
+  .edu-year {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(6,182,212,0.8);
+    margin-bottom: 6px;
+  }
+  .edu-degree {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    margin-bottom: 4px;
+  }
+  .edu-inst { font-size: 13px; color: rgba(255,255,255,0.4); }
+
+  /* ── CONTACT ── */
+  .contact-card {
+    padding: 48px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    width: 500px; height: 300px;
+    background: radial-gradient(ellipse, rgba(233,30,140,0.22), transparent 70%);
+    top: -60px; left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+  .contact-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .contact-card p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.42);
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .contact-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; position: relative; }
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    color: rgba(255,255,255,0.75);
+    backdrop-filter: blur(10px);
+    transition: all 0.2s;
+  }
+  .contact-btn:hover { background: var(--glass-hover); color: #fff; transform: translateY(-2px); }
+  .contact-btn.wa { border-color: rgba(37,211,102,0.4); }
+  .contact-btn.wa:hover { background: rgba(37,211,102,0.12); }
+  .contact-btn.ig { border-color: rgba(233,30,140,0.4); }
+  .contact-btn.ig:hover { background: rgba(233,30,140,0.12); }
+  .contact-btn.em { border-color: rgba(6,182,212,0.4); }
+  .contact-btn.em:hover { background: rgba(6,182,212,0.12); }
+
+  /* footer */
+  footer {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 28px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.2);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    letter-spacing: 0.5px;
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .hero-inner { grid-template-columns: 1fr; text-align: center; }
+    .hero-bio { max-width: 100%; }
+    .hero-btns { justify-content: center; }
+    .profile-wrap { order: -1; margin: 0 auto; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    .wrap { padding: 0 16px 80px; }
+    .skills-section { padding: 24px 20px; }
+    .contact-card { padding: 36px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Blobs -->
+<div class="blobs">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="blob b4"></div>
+  <div class="blob b5"></div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLB(event)">
+  <button class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('open')">✕</button>
+  <img id="lb-img" src="" alt="preview">
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Dipanshu Soni</div>
+  <ul class="nav-links">
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div>
+        <div class="avail"><div class="dot-green"></div> Available for Freelance</div>
+        <h1>Dipanshu<br>Soni</h1>
+        <div class="hero-title-sub">Graphic Designer &amp; Video Editor</div>
+        <p class="hero-bio">
+          Main ek passionate graphic designer aur video editor hoon — posters, banners, thumbnails, logos aur har tarah ki designing karta hoon. Aapke brand ko ek unique aur professional identity dena mera kaam hai.
+        </p>
+        <div class="hero-btns">
+          <a href="#portfolio" class="btn-pink">View My Work</a>
+          <a href="#contact" class="btn-ghost">Hire Me →</a>
+        </div>
+      </div>
+      <div class="profile-wrap">
+        <div class="profile-ring">
+          <img class="profile-img" src="https://i.postimg.cc/BbBkm8hX/IMG-20260309-142342863-HDR.jpg" alt="Dipanshu Soni" onerror="this.src='https://ui-avatars.com/api/?name=Dipanshu+Soni&size=220&background=7c3aed&color=fff&rounded=true'">
+        </div>
+        <div class="profile-badge">📍 Kasganj, UP</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS ── -->
+  <section class="section">
+    <div class="stats-grid">
+      <div class="stat-card glass">
+        <div class="stat-num">500+</div>
+        <div class="stat-lbl">Graphic Designs</div>
+      </div>
+      <div class="stat-card glass">
+        <div class="stat-num">50+</div>
+        <div class="stat-lbl">Logos Created</div>
+      </div>
+      <div class="stat-card glass">
+        <div class="stat-num">250+</div>
+        <div class="stat-lbl">Projects Completed</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PORTFOLIO ── -->
+  <section class="section" id="portfolio">
+    <div class="sec-label">Selected Work</div>
+
+    <div class="tabs">
+      <div class="tab active" onclick="filterTab(this, 'all')">All</div>
+      <div class="tab" onclick="filterTab(this, 'poster')">Posters</div>
+      <div class="tab" onclick="filterTab(this, 'logo')">Logo Designs</div>
+      <div class="tab" onclick="filterTab(this, 'banner')">Banners</div>
+      <div class="tab" onclick="filterTab(this, 'packaging')">Packaging</div>
+    </div>
+
+    <div class="portfolio-grid" id="portGrid">
+
+      <!-- LOGOS -->
+      <div class="port-item" data-cat="logo" onclick="openLB('https://i.postimg.cc/Z520sg2q/Chat-GPT-Image-May-15-2026-10-04-26-PM.png')">
+        <img src="https://i.postimg.cc/Z520sg2q/Chat-GPT-Image-May-15-2026-10-04-26-PM.png" alt="Logo Design" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Logo</span></div>
+      </div>
+      <div class="port-item" data-cat="logo" onclick="openLB('https://i.postimg.cc/NjSLCVVW/Chat-GPT-Image-May-15-2026-10-06-02-PM.png')">
+        <img src="https://i.postimg.cc/NjSLCVVW/Chat-GPT-Image-May-15-2026-10-06-02-PM.png" alt="Logo Design" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Logo</span></div>
+      </div>
+      <div class="port-item" data-cat="logo" onclick="openLB('https://i.postimg.cc/t4w7vffw/Chat-GPT-Image-May-15-2026-10-07-09-PM.png')">
+        <img src="https://i.postimg.cc/t4w7vffw/Chat-GPT-Image-May-15-2026-10-07-09-PM.png" alt="Logo Design" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Logo</span></div>
+      </div>
+      <div class="port-item" data-cat="logo" onclick="openLB('https://i.postimg.cc/kgzDYZZL/Chat-GPT-Image-May-15-2026-10-09-04-PM.png')">
+        <img src="https://i.postimg.cc/kgzDYZZL/Chat-GPT-Image-May-15-2026-10-09-04-PM.png" alt="Logo Design" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Logo</span></div>
+      </div>
+      <div class="port-item" data-cat="logo" onclick="openLB('https://i.postimg.cc/pLppZx0Q/IMG-20260515-WA0017.jpg')">
+        <img src="https://i.postimg.cc/pLppZx0Q/IMG-20260515-WA0017.jpg" alt="Logo Design" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Logo</span></div>
+      </div>
+
+      <!-- BANNERS -->
+      <div class="port-item" data-cat="banner" onclick="openLB('https://i.postimg.cc/6Q4KSPKR/Chat-GPT-Image-May-15-2026-10-37-07-PM.png')">
+        <img src="https://i.postimg.cc/6Q4KSPKR/Chat-GPT-Image-May-15-2026-10-37-07-PM.png" alt="Banner Design" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Banner</span></div>
+      </div>
+      <div class="port-item" data-cat="banner" onclick="openLB('https://i.postimg.cc/DwMFxT9Z/Gemini-Generated-Image-85m6b085m6b085m6.png')">
+        <img src="https://i.postimg.cc/DwMFxT9Z/Gemini-Generated-Image-85m6b085m6b085m6.png" alt="Banner Design" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Banner</span></div>
+      </div>
+      <div class="port-item" data-cat="banner" onclick="openLB('https://i.postimg.cc/xdNQ7ZQL/Tech-with-Dipanshu.png')">
+        <img src="https://i.postimg.cc/xdNQ7ZQL/Tech-with-Dipanshu.png" alt="Banner Design" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Banner</span></div>
+      </div>
+
+      <!-- POSTERS -->
+      <div class="port-item" data-cat="poster" onclick="openLB('https://i.postimg.cc/MTryTX4P/IMG-20260515-WA0005.jpg')">
+        <img src="https://i.postimg.cc/MTryTX4P/IMG-20260515-WA0005.jpg" alt="Poster" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Poster</span></div>
+      </div>
+      <div class="port-item" data-cat="poster" onclick="openLB('https://i.postimg.cc/B6vT42hp/IMG-20260515-WA0007.jpg')">
+        <img src="https://i.postimg.cc/B6vT42hp/IMG-20260515-WA0007.jpg" alt="Poster" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Poster</span></div>
+      </div>
+      <div class="port-item" data-cat="poster" onclick="openLB('https://i.postimg.cc/tgk3KBzb/IMG-20260515-WA0009.jpg')">
+        <img src="https://i.postimg.cc/tgk3KBzb/IMG-20260515-WA0009.jpg" alt="Poster" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Poster</span></div>
+      </div>
+      <div class="port-item" data-cat="poster" onclick="openLB('https://i.postimg.cc/xd5vw6PY/IMG-20260515-WA0010.jpg')">
+        <img src="https://i.postimg.cc/xd5vw6PY/IMG-20260515-WA0010.jpg" alt="Poster" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Poster</span></div>
+      </div>
+      <div class="port-item" data-cat="poster" onclick="openLB('https://i.postimg.cc/3w1XstZQ/IMG-20260515-WA0011.jpg')">
+        <img src="https://i.postimg.cc/3w1XstZQ/IMG-20260515-WA0011.jpg" alt="Poster" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Poster</span></div>
+      </div>
+      <div class="port-item" data-cat="poster" onclick="openLB('https://i.postimg.cc/nL24y31b/IMG-20260515-WA0013.jpg')">
+        <img src="https://i.postimg.cc/nL24y31b/IMG-20260515-WA0013.jpg" alt="Poster" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Poster</span></div>
+      </div>
+      <div class="port-item" data-cat="poster" onclick="openLB('https://i.postimg.cc/RF074wPn/IMG-20260515-WA0014.jpg')">
+        <img src="https://i.postimg.cc/RF074wPn/IMG-20260515-WA0014.jpg" alt="Poster" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Poster</span></div>
+      </div>
+      <div class="port-item" data-cat="poster" onclick="openLB('https://i.postimg.cc/vBmrb5P1/IMG-20260515-WA0015.jpg')">
+        <img src="https://i.postimg.cc/vBmrb5P1/IMG-20260515-WA0015.jpg" alt="Poster" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Poster</span></div>
+      </div>
+      <div class="port-item" data-cat="poster" onclick="openLB('https://i.postimg.cc/fLbcDYHS/IMG-20260515-WA0016.jpg')">
+        <img src="https://i.postimg.cc/fLbcDYHS/IMG-20260515-WA0016.jpg" alt="Poster" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Poster</span></div>
+      </div>
+      <div class="port-item" data-cat="poster" onclick="openLB('https://i.postimg.cc/85CRNLy6/IMG-20260515-WA0018.jpg')">
+        <img src="https://i.postimg.cc/85CRNLy6/IMG-20260515-WA0018.jpg" alt="Poster" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Poster</span></div>
+      </div>
+      <div class="port-item" data-cat="poster" onclick="openLB('https://i.postimg.cc/hjGLcVC2/IMG-20260515-WA0019.jpg')">
+        <img src="https://i.postimg.cc/hjGLcVC2/IMG-20260515-WA0019.jpg" alt="Poster" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Poster</span></div>
+      </div>
+      <div class="port-item" data-cat="poster" onclick="openLB('https://i.postimg.cc/JnhNMjT6/IMG-20260515-WA0021.jpg')">
+        <img src="https://i.postimg.cc/JnhNMjT6/IMG-20260515-WA0021.jpg" alt="Poster" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Poster</span></div>
+      </div>
+      <div class="port-item" data-cat="poster" onclick="openLB('https://i.postimg.cc/G2pFdvMZ/IMG-20260515-WA0022.jpg')">
+        <img src="https://i.postimg.cc/G2pFdvMZ/IMG-20260515-WA0022.jpg" alt="Poster" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Poster</span></div>
+      </div>
+      <div class="port-item" data-cat="poster" onclick="openLB('https://i.postimg.cc/XqG9y46d/PEPSI.png')">
+        <img src="https://i.postimg.cc/XqG9y46d/PEPSI.png" alt="Pepsi Poster" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Poster</span></div>
+      </div>
+
+      <!-- PACKAGING -->
+      <div class="port-item" data-cat="packaging" onclick="openLB('https://i.postimg.cc/hvYqPFVH/IMG-20260515-WA0020.jpg')">
+        <img src="https://i.postimg.cc/hvYqPFVH/IMG-20260515-WA0020.jpg" alt="Packaging Design" loading="lazy">
+        <div class="port-overlay"><span class="port-tag">Packaging</span></div>
+      </div>
+
+    </div>
+
+    <!-- AI Designs CTA -->
+    <div style="margin-top:24px; padding:22px 26px; border-radius:16px; background:rgba(233,30,140,0.08); border:1px solid rgba(233,30,140,0.2); display:flex; align-items:center; justify-content:space-between; flex-wrap:gap; gap:16px;">
+      <div>
+        <div style="font-size:14px; font-weight:500; margin-bottom:4px;">✨ AI Designs bhi dekhein</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.45);">Instagram par AI-generated design work bhi available hai</div>
+      </div>
+      <a href="https://www.instagram.com/graphic_dzyner?igsh=ZHVtdnc3Mmwxdmk5" target="_blank" class="btn-pink" style="white-space:nowrap; font-size:13px; padding:10px 20px;">View on Instagram →</a>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section class="section" id="skills">
+    <div class="sec-label">What I Do</div>
+    <div class="skills-section glass">
+
+      <div class="skills-group">
+        <div class="skills-group-title">🎨 Design Skills</div>
+        <div class="pills">
+          <div class="pill">Poster Design</div>
+          <div class="pill">Banner Design</div>
+          <div class="pill">Logo Design</div>
+          <div class="pill">Thumbnail Design</div>
+          <div class="pill">Label Design</div>
+          <div class="pill">Packaging Design</div>
+          <div class="pill">Product Promotion</div>
+          <div class="pill">Marketing Design</div>
+          <div class="pill">Visual Storytelling</div>
+          <div class="pill">Typography</div>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <div class="skills-group-title">🎬 Video Editing</div>
+        <div class="pills">
+          <div class="pill cyan">AI Video Creation</div>
+          <div class="pill cyan">Video Editing</div>
+          <div class="pill cyan">Reels / Shorts</div>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <div class="skills-group-title">🛠️ Design Tools</div>
+        <div class="pills">
+          <div class="pill amber">Adobe Photoshop</div>
+          <div class="pill amber">Adobe Illustrator</div>
+          <div class="pill amber">CorelDRAW</div>
+          <div class="pill amber">Canva</div>
+        </div>
+      </div>
+
+      <div class="skills-group" style="margin-bottom:0">
+        <div class="skills-group-title">🎞️ Video Tools</div>
+        <div class="pills">
+          <div class="pill amber">CapCut</div>
+          <div class="pill amber">VN Editor</div>
+          <div class="pill amber">Adobe Premiere Pro</div>
+          <div class="pill amber">Adobe After Effects</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PRICING ── -->
+  <section class="section" id="pricing">
+    <div class="sec-label">Pricing</div>
+    <div class="pricing-grid">
+
+      <div class="price-card glass">
+        <div class="price-title">Logo Design</div>
+        <div class="price-amount">₹299 – ₹999</div>
+        <div class="price-rev">2–3 Revisions included</div>
+        <div class="price-desc">Professional logo design for your brand — minimal, modern, or illustrative — tailored to your vision.</div>
+        <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20am%20interested%20in%20Logo%20Design." target="_blank" class="btn-pink" style="font-size:13px; padding:10px 22px; display:inline-block;">Order Now →</a>
+      </div>
+
+      <div class="price-card glass featured">
+        <div class="price-title">Poster / Banner</div>
+        <div class="price-amount">₹99 – ₹499</div>
+        <div class="price-rev">2 Revisions included</div>
+        <div class="price-desc">Eye-catching posters and banners for social media, events, promotions, and more — delivered fast.</div>
+        <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20need%20a%20Poster%20or%20Banner%20design." target="_blank" class="btn-pink" style="font-size:13px; padding:10px 22px; display:inline-block;">Order Now →</a>
+      </div>
+
+      <div class="price-card glass">
+        <div class="price-title">Thumbnail Design</div>
+        <div class="price-amount">₹49 – ₹199</div>
+        <div class="price-rev">1–2 Revisions included</div>
+        <div class="price-desc">High-CTR YouTube or social media thumbnails that grab attention and boost your views.</div>
+        <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20need%20a%20Thumbnail%20design." target="_blank" class="btn-pink" style="font-size:13px; padding:10px 22px; display:inline-block;">Order Now →</a>
+      </div>
+
+      <div class="price-card glass">
+        <div class="price-title">Video Editing</div>
+        <div class="price-amount">₹199 – ₹999</div>
+        <div class="price-rev">1–2 Revisions included</div>
+        <div class="price-desc">Reels, YouTube videos, promotional videos — professional editing with transitions, effects and music sync.</div>
+        <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20need%20Video%20Editing." target="_blank" class="btn-pink" style="font-size:13px; padding:10px 22px; display:inline-block;">Order Now →</a>
+      </div>
+
+    </div>
+
+    <div style="margin-top:20px; padding:18px 24px; border-radius:14px; background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.2); font-size:13px; color:rgba(255,255,255,0.55); text-align:center;">
+      💬 Custom project hai? WhatsApp par discuss karte hain — <a href="https://wa.me/916399799895" target="_blank" style="color:#fcd34d; text-decoration:none;">+91 63997 99895</a>
+    </div>
+  </section>
+
+  <!-- ── EXPERIENCE ── -->
+  <section class="section" id="experience">
+    <div class="sec-label">Experience</div>
+    <div class="glass" style="padding: 36px 36px 20px;">
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">March 2025 – Present</div>
+          <div class="tl-title">Freelance Graphic Designer &amp; Video Editor</div>
+          <div class="tl-desc">
+            Independent freelancer working with clients across India — designing logos, posters, banners, thumbnails, packaging, and promotional content. Also providing professional video editing services using industry-standard tools. Delivered 250+ projects with a focus on quality, creativity, and client satisfaction.
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2024 – 2025</div>
+          <div class="tl-title">Self-Taught Design &amp; Video Editing Journey</div>
+          <div class="tl-desc">
+            Mastered Adobe Photoshop, Illustrator, CorelDRAW, Canva, Premiere Pro, After Effects, CapCut, and VN Editor through self-learning and practice. Built a strong design portfolio of 500+ graphic designs across multiple categories.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ── -->
+  <section class="section" id="education">
+    <div class="sec-label">Education Journey</div>
+    <div class="edu-grid">
+
+      <div class="edu-card glass">
+        <div class="edu-year">2025</div>
+        <div class="edu-degree">B.Sc. (Bachelor of Science)</div>
+        <div class="edu-inst">Graduated — 2025</div>
+      </div>
+
+      <div class="edu-card glass">
+        <div class="edu-year">2021</div>
+        <div class="edu-degree">12th Standard (Intermediate)</div>
+        <div class="edu-inst">Completed — 2021</div>
+      </div>
+
+      <div class="edu-card glass">
+        <div class="edu-year">2019</div>
+        <div class="edu-degree">10th Standard (High School)</div>
+        <div class="edu-inst">Completed — 2019</div>
+      </div>
+
+      <div class="edu-card glass" style="border-color: rgba(6,182,212,0.35);">
+        <div class="edu-year" style="color:rgba(6,182,212,0.9);">Certificate</div>
+        <div class="edu-degree">CCC Computer Course</div>
+        <div class="edu-inst">NIELIT Certified — Computer Fundamentals</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="section" id="contact">
+    <div class="contact-card glass">
+      <h2>Kaam karein saath<br><em style="background:linear-gradient(135deg,#e91e8c,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:italic;">milke banaate hain kuch alag</em></h2>
+      <p>Freelance projects, collaborations aur business inquiries ke liye reach out karein.</p>
+      <div class="contact-links">
+        <a href="https://wa.me/916399799895" target="_blank" class="contact-btn wa">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.112 1.528 5.836L0 24l6.335-1.512A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.964-1.348l-.356-.214-3.761.897.942-3.664-.233-.373A9.77 9.77 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+          WhatsApp
+        </a>
+        <a href="https://www.instagram.com/graphic_dzyner?igsh=ZHVtdnc3Mmwxdmk5" target="_blank" class="contact-btn ig">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @graphic_dzyner
+        </a>
+        <a href="mailto:dipanshuksj003@gmail.com" class="contact-btn em">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          Email Me
+        </a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  © 2025 Dipanshu Soni · Graphic Designer &amp; Video Editor · Kasganj, Uttar Pradesh
+</footer>
+
+<script>
+  function filterTab(el, cat) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    document.querySelectorAll('.port-item').forEach(item => {
+      if (cat === 'all' || item.dataset.cat === cat) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  function openLB(src) {
+    document.getElementById('lb-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+
+  function closeLB(e) {
+    if (e.target === document.getElementById('lightbox')) {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('open');
+  });
+</script>
+
+</body>
+</html>
