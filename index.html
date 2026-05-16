@@ -4,26 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dipanshu Soni — Graphic Designer & Video Editor</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --pink: #e91e8c;
-    --purple: #7c3aed;
-    --cyan: #06b6d4;
-    --amber: #f59e0b;
-    --glass-bg: rgba(255,255,255,0.06);
-    --glass-border: rgba(255,255,255,0.13);
-    --glass-hover: rgba(255,255,255,0.1);
+    --indigo: #1a1560;
+    --indigo-mid: #2d27a0;
+    --indigo-light: #4f46e5;
+    --sand: #faf8f3;
+    --sand-mid: #f0ebe0;
+    --sand-dark: #e8e0d0;
+    --text-dark: #0f0c2e;
+    --text-mid: #3d3a60;
+    --text-muted: #7a7898;
+    --glass-bg: rgba(255,255,255,0.65);
+    --glass-border: rgba(26,21,96,0.12);
+    --glass-hover: rgba(255,255,255,0.85);
   }
 
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'DM Sans', sans-serif;
-    background: #07070f;
-    color: #fff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #faf8f3;
+    color: var(--text-dark);
     min-height: 100vh;
     overflow-x: hidden;
   }
@@ -39,15 +44,15 @@
   .blob {
     position: absolute;
     border-radius: 50%;
-    filter: blur(90px);
-    opacity: 0.45;
+    filter: blur(80px);
+    opacity: 0.35;
     animation: blobFloat 14s ease-in-out infinite;
   }
-  .b1 { width: 600px; height: 600px; background: #7c3aed; top: -200px; left: -200px; animation-delay: 0s; }
-  .b2 { width: 450px; height: 450px; background: #e91e8c; top: 300px; right: -150px; animation-delay: -5s; }
-  .b3 { width: 380px; height: 380px; background: #06b6d4; bottom: 100px; left: 50px; animation-delay: -9s; }
-  .b4 { width: 320px; height: 320px; background: #f59e0b; bottom: -100px; right: 250px; animation-delay: -3s; }
-  .b5 { width: 250px; height: 250px; background: #10b981; top: 60%; left: 40%; animation-delay: -7s; }
+  .b1 { width: 600px; height: 600px; background: #c7c3f0; top: -200px; left: -200px; animation-delay: 0s; }
+  .b2 { width: 450px; height: 450px; background: #f5c6d0; top: 300px; right: -150px; animation-delay: -5s; }
+  .b3 { width: 380px; height: 380px; background: #d4e8f5; bottom: 100px; left: 50px; animation-delay: -9s; }
+  .b4 { width: 320px; height: 320px; background: #fde8c0; bottom: -100px; right: 250px; animation-delay: -3s; }
+  .b5 { width: 250px; height: 250px; background: #c8ecd8; top: 60%; left: 40%; animation-delay: -7s; }
 
   @keyframes blobFloat {
     0%,100% { transform: translate(0,0) scale(1); }
@@ -76,22 +81,23 @@
     justify-content: space-between;
     align-items: center;
     padding: 18px 48px;
-    background: rgba(7,7,15,0.6);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    background: var(--indigo);
+    border-bottom: none;
   }
   .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    background: linear-gradient(135deg, #fff 40%, #e91e8c);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.08em;
+    color: #fff;
   }
   .nav-links { display: flex; gap: 30px; list-style: none; }
   .nav-links a {
-    font-size: 13px;
+    font-size: 11px;
+    font-weight: 500;
     color: rgba(255,255,255,0.5);
     text-decoration: none;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     transition: color 0.2s;
   }
   .nav-links a:hover { color: #fff; }
@@ -108,8 +114,8 @@
   /* ── GLASS ── */
   .glass {
     background: var(--glass-bg);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
     border-radius: 20px;
   }
@@ -119,8 +125,9 @@
     font-size: 11px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.3);
+    color: var(--indigo-light);
     margin-bottom: 20px;
+    font-weight: 600;
   }
 
   .section { margin-bottom: 80px; }
@@ -143,41 +150,47 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 12px;
-    color: rgba(255,255,255,0.45);
+    font-size: 11px;
+    color: var(--indigo-light);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     margin-bottom: 22px;
+    background: rgba(79,70,229,0.08);
+    border: 1px solid rgba(79,70,229,0.2);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-weight: 600;
   }
   .dot-green {
     width: 8px; height: 8px;
     border-radius: 50%;
-    background: #4ade80;
-    box-shadow: 0 0 10px #4ade80;
+    background: #22c55e;
+    box-shadow: 0 0 8px #22c55e;
     animation: pulse 2s ease-in-out infinite;
   }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
 
   h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(42px, 6vw, 68px);
-    line-height: 1.08;
-    letter-spacing: -1.5px;
+    line-height: 1.05;
+    letter-spacing: -2px;
     margin-bottom: 8px;
+    color: var(--text-dark);
+    font-weight: 700;
   }
   .hero-title-sub {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(18px, 3vw, 26px);
-    font-style: italic;
-    background: linear-gradient(135deg, #e91e8c, #7c3aed);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(16px, 2.5vw, 22px);
+    font-weight: 500;
+    color: var(--indigo-light);
     margin-bottom: 22px;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.3px;
   }
   .hero-bio {
     font-size: 15px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.5);
+    font-weight: 400;
+    color: var(--text-muted);
     line-height: 1.8;
     max-width: 440px;
     margin-bottom: 36px;
@@ -186,33 +199,34 @@
 
   .btn-pink {
     padding: 13px 28px;
-    border-radius: 100px;
+    border-radius: 8px;
     font-size: 14px;
-    font-weight: 500;
-    background: linear-gradient(135deg, #e91e8c, #7c3aed);
+    font-weight: 600;
+    background: var(--indigo);
     color: #fff;
     border: none;
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
     transition: opacity 0.2s, transform 0.15s;
+    letter-spacing: 0.02em;
   }
-  .btn-pink:hover { opacity: 0.82; transform: translateY(-2px); }
+  .btn-pink:hover { opacity: 0.85; transform: translateY(-2px); }
 
   .btn-ghost {
     padding: 12px 26px;
-    border-radius: 100px;
+    border-radius: 8px;
     font-size: 14px;
-    background: var(--glass-bg);
-    color: rgba(255,255,255,0.7);
-    border: 1px solid var(--glass-border);
+    font-weight: 500;
+    background: transparent;
+    color: var(--indigo);
+    border: 1.5px solid var(--indigo);
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
-    backdrop-filter: blur(10px);
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.2s;
   }
-  .btn-ghost:hover { background: var(--glass-hover); }
+  .btn-ghost:hover { background: var(--indigo); color: #fff; }
 
   /* Profile photo */
   .profile-wrap {
@@ -221,28 +235,29 @@
   }
   .profile-ring {
     width: 220px; height: 220px;
-    border-radius: 50%;
+    border-radius: 16px;
     padding: 3px;
-    background: linear-gradient(135deg, #e91e8c, #7c3aed, #06b6d4);
-    box-shadow: 0 0 60px rgba(233,30,140,0.35);
+    background: linear-gradient(135deg, var(--indigo), var(--indigo-light), #a5b4fc);
+    box-shadow: 0 12px 40px rgba(26,21,96,0.2);
   }
   .profile-img {
     width: 100%; height: 100%;
-    border-radius: 50%;
+    border-radius: 14px;
     object-fit: cover;
     display: block;
   }
   .profile-badge {
     position: absolute;
     bottom: 8px; right: -10px;
-    background: linear-gradient(135deg, #e91e8c, #7c3aed);
-    border-radius: 100px;
+    background: var(--indigo);
+    border-radius: 8px;
     padding: 6px 14px;
     font-size: 11px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.5px;
     white-space: nowrap;
-    border: 2px solid #07070f;
+    color: #fff;
+    border: 2px solid #faf8f3;
   }
 
   /* ── STATS ── */
@@ -259,32 +274,31 @@
   }
   .stat-card:hover { transform: translateY(-4px); }
   .stat-num {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 40px;
     font-weight: 700;
-    background: linear-gradient(135deg, #fff 50%, #e91e8c);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    color: var(--indigo);
     line-height: 1;
     margin-bottom: 8px;
   }
-  .stat-lbl { font-size: 12px; color: rgba(255,255,255,0.38); text-transform: uppercase; letter-spacing: 1px; }
+  .stat-lbl { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
 
   /* ── PORTFOLIO TABS ── */
   .tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
   .tab {
     padding: 9px 20px;
-    border-radius: 100px;
+    border-radius: 8px;
     font-size: 13px;
+    font-weight: 500;
     cursor: pointer;
-    border: 1px solid var(--glass-border);
+    border: 1.5px solid var(--glass-border);
     background: var(--glass-bg);
-    color: rgba(255,255,255,0.55);
+    color: var(--text-muted);
     transition: all 0.2s;
-    backdrop-filter: blur(10px);
   }
   .tab.active, .tab:hover {
-    background: linear-gradient(135deg, #e91e8c, #7c3aed);
-    border-color: transparent;
+    background: var(--indigo);
+    border-color: var(--indigo);
     color: #fff;
   }
 
@@ -310,7 +324,7 @@
   .port-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(7,7,15,0.85) 0%, transparent 50%);
+    background: linear-gradient(to top, rgba(26,21,96,0.82) 0%, transparent 55%);
     opacity: 0;
     transition: opacity 0.3s;
     display: flex;
@@ -323,8 +337,9 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     padding: 4px 12px;
-    border-radius: 100px;
-    background: rgba(233,30,140,0.8);
+    border-radius: 6px;
+    background: rgba(79,70,229,0.85);
+    color: #fff;
     backdrop-filter: blur(4px);
   }
 
@@ -360,23 +375,25 @@
     font-size: 12px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.35);
+    color: var(--text-muted);
     margin-bottom: 12px;
+    font-weight: 600;
   }
   .pills { display: flex; flex-wrap: wrap; gap: 10px; }
   .pill {
     padding: 8px 18px;
-    border-radius: 100px;
+    border-radius: 8px;
     font-size: 13px;
-    border: 1px solid var(--glass-border);
-    background: var(--glass-bg);
-    color: rgba(255,255,255,0.7);
+    border: 1.5px solid var(--sand-dark);
+    background: #fff;
+    color: var(--text-mid);
     transition: all 0.2s;
     cursor: default;
+    font-weight: 500;
   }
-  .pill:hover { background: rgba(233,30,140,0.18); color: #f9a8d4; border-color: rgba(233,30,140,0.35); }
-  .pill.cyan:hover { background: rgba(6,182,212,0.18); color: #67e8f9; border-color: rgba(6,182,212,0.35); }
-  .pill.amber:hover { background: rgba(245,158,11,0.18); color: #fcd34d; border-color: rgba(245,158,11,0.35); }
+  .pill:hover { background: var(--indigo); color: #fff; border-color: var(--indigo); }
+  .pill.cyan:hover { background: #0e7490; color: #fff; border-color: #0e7490; }
+  .pill.amber:hover { background: #92400e; color: #fff; border-color: #92400e; }
 
   /* ── PRICING ── */
   .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -386,42 +403,44 @@
     transition: transform 0.22s;
   }
   .price-card:hover { transform: translateY(-4px); }
-  .price-card.featured { border-color: rgba(233,30,140,0.5); }
+  .price-card.featured { border-color: rgba(79,70,229,0.4); }
   .price-card.featured::before {
     content: '⭐ Most Popular';
     position: absolute;
     top: -14px; left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, #e91e8c, #7c3aed);
+    background: var(--indigo);
+    color: #fff;
     font-size: 11px;
     padding: 5px 18px;
-    border-radius: 100px;
+    border-radius: 6px;
     white-space: nowrap;
     letter-spacing: 0.5px;
   }
   .price-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 22px;
     margin-bottom: 6px;
+    font-weight: 700;
+    color: var(--text-dark);
   }
   .price-amount {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 36px;
     font-weight: 700;
-    background: linear-gradient(135deg, #fff, #e91e8c);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    color: var(--indigo);
     margin-bottom: 4px;
   }
   .price-rev {
     font-size: 12px;
-    color: rgba(255,255,255,0.4);
+    color: var(--text-muted);
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid var(--glass-border);
   }
   .price-desc {
     font-size: 13px;
-    color: rgba(255,255,255,0.55);
+    color: var(--text-muted);
     line-height: 1.7;
     margin-bottom: 22px;
   }
@@ -432,8 +451,8 @@
     content: '';
     position: absolute;
     left: 7px; top: 0; bottom: 0;
-    width: 1px;
-    background: linear-gradient(to bottom, #e91e8c, #7c3aed, transparent);
+    width: 2px;
+    background: linear-gradient(to bottom, var(--indigo), var(--indigo-light), transparent);
   }
   .tl-item { position: relative; margin-bottom: 36px; }
   .tl-dot {
@@ -441,24 +460,27 @@
     left: -24px; top: 4px;
     width: 14px; height: 14px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #e91e8c, #7c3aed);
-    box-shadow: 0 0 12px rgba(233,30,140,0.5);
+    background: var(--indigo);
+    box-shadow: 0 0 0 3px rgba(26,21,96,0.15);
   }
   .tl-year {
     font-size: 11px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: rgba(233,30,140,0.8);
+    color: var(--indigo-light);
     margin-bottom: 4px;
+    font-weight: 600;
   }
   .tl-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 18px;
+    font-weight: 700;
     margin-bottom: 6px;
+    color: var(--text-dark);
   }
   .tl-desc {
     font-size: 13px;
-    color: rgba(255,255,255,0.45);
+    color: var(--text-muted);
     line-height: 1.7;
   }
 
@@ -470,15 +492,18 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: rgba(6,182,212,0.8);
+    color: var(--indigo-light);
     margin-bottom: 6px;
+    font-weight: 600;
   }
   .edu-degree {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 17px;
+    font-weight: 700;
     margin-bottom: 4px;
+    color: var(--text-dark);
   }
-  .edu-inst { font-size: 13px; color: rgba(255,255,255,0.4); }
+  .edu-inst { font-size: 13px; color: var(--text-muted); }
 
   /* ── CONTACT ── */
   .contact-card {
@@ -491,20 +516,22 @@
     content: '';
     position: absolute;
     width: 500px; height: 300px;
-    background: radial-gradient(ellipse, rgba(233,30,140,0.22), transparent 70%);
+    background: radial-gradient(ellipse, rgba(79,70,229,0.12), transparent 70%);
     top: -60px; left: 50%;
     transform: translateX(-50%);
     pointer-events: none;
   }
   .contact-card h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 36px;
+    font-weight: 700;
+    color: var(--text-dark);
     margin-bottom: 10px;
     position: relative;
   }
   .contact-card p {
     font-size: 15px;
-    color: rgba(255,255,255,0.42);
+    color: var(--text-muted);
     margin-bottom: 32px;
     position: relative;
   }
@@ -514,31 +541,31 @@
     align-items: center;
     gap: 8px;
     padding: 12px 22px;
-    border-radius: 100px;
+    border-radius: 8px;
     font-size: 13px;
     font-weight: 500;
     text-decoration: none;
-    border: 1px solid var(--glass-border);
-    background: var(--glass-bg);
-    color: rgba(255,255,255,0.75);
-    backdrop-filter: blur(10px);
+    border: 1.5px solid var(--sand-dark);
+    background: #fff;
+    color: var(--text-mid);
     transition: all 0.2s;
   }
-  .contact-btn:hover { background: var(--glass-hover); color: #fff; transform: translateY(-2px); }
+  .contact-btn:hover { transform: translateY(-2px); }
   .contact-btn.wa { border-color: rgba(37,211,102,0.4); }
-  .contact-btn.wa:hover { background: rgba(37,211,102,0.12); }
-  .contact-btn.ig { border-color: rgba(233,30,140,0.4); }
-  .contact-btn.ig:hover { background: rgba(233,30,140,0.12); }
-  .contact-btn.em { border-color: rgba(6,182,212,0.4); }
-  .contact-btn.em:hover { background: rgba(6,182,212,0.12); }
+  .contact-btn.wa:hover { background: rgba(37,211,102,0.08); color: #15803d; }
+  .contact-btn.ig { border-color: rgba(79,70,229,0.35); }
+  .contact-btn.ig:hover { background: rgba(79,70,229,0.08); color: var(--indigo-light); }
+  .contact-btn.em { border-color: rgba(26,21,96,0.3); }
+  .contact-btn.em:hover { background: var(--indigo); color: #fff; border-color: var(--indigo); }
 
   /* ── PRICING NEW ── */
   .pc-subtitle {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 28px;
     text-align: center;
+    color: var(--text-dark);
   }
   .pc-grid { display: grid; gap: 20px; }
   .pc-grid.three { grid-template-columns: repeat(3, 1fr); }
@@ -553,42 +580,42 @@
     transition: transform 0.22s;
   }
   .pc-card:hover { transform: translateY(-4px); }
-  .pc-card.pc-featured { border-color: rgba(233,30,140,0.45); }
+  .pc-card.pc-featured { border-color: rgba(79,70,229,0.4); }
   .pc-badge {
     display: inline-block;
     font-size: 11px;
     padding: 5px 14px;
-    border-radius: 100px;
-    background: linear-gradient(135deg, #e91e8c, #7c3aed);
+    border-radius: 6px;
+    background: var(--indigo);
     color: #fff;
     letter-spacing: 0.4px;
-    font-weight: 500;
+    font-weight: 600;
     width: fit-content;
   }
   .pc-tier {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 20px;
     font-weight: 700;
     line-height: 1.2;
+    color: var(--text-dark);
   }
   .pc-who {
     font-size: 12px;
-    color: rgba(255,255,255,0.38);
+    color: var(--text-muted);
     line-height: 1.6;
     padding-bottom: 12px;
     border-bottom: 1px solid var(--glass-border);
   }
   .pc-price {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 16px;
-    color: rgba(255,255,255,0.5);
+    color: var(--text-muted);
     line-height: 1;
   }
   .pc-price span {
     font-size: 36px;
     font-weight: 700;
-    background: linear-gradient(135deg, #fff 40%, #e91e8c);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    color: var(--indigo);
   }
   .pc-features {
     list-style: none;
@@ -599,7 +626,7 @@
   }
   .pc-features li {
     font-size: 13px;
-    color: rgba(255,255,255,0.6);
+    color: var(--text-mid);
     padding-left: 20px;
     position: relative;
     line-height: 1.5;
@@ -608,13 +635,13 @@
     content: '✓';
     position: absolute;
     left: 0;
-    color: #e91e8c;
+    color: var(--indigo-light);
     font-weight: 700;
     font-size: 12px;
   }
   .pc-timeline {
     font-size: 12px;
-    color: rgba(255,255,255,0.35);
+    color: var(--text-muted);
     padding-top: 8px;
     border-top: 1px solid var(--glass-border);
   }
@@ -634,9 +661,10 @@
     text-align: center;
     padding: 28px;
     font-size: 12px;
-    color: rgba(255,255,255,0.2);
-    border-top: 1px solid rgba(255,255,255,0.05);
+    color: var(--text-muted);
+    border-top: 1px solid var(--sand-dark);
     letter-spacing: 0.5px;
+    background: var(--sand-mid);
   }
 
   /* Responsive */
@@ -847,10 +875,10 @@
     </div>
 
     <!-- AI Designs CTA -->
-    <div style="margin-top:24px; padding:22px 26px; border-radius:16px; background:rgba(233,30,140,0.08); border:1px solid rgba(233,30,140,0.2); display:flex; align-items:center; justify-content:space-between; flex-wrap:gap; gap:16px;">
+    <div style="margin-top:24px; padding:22px 26px; border-radius:16px; background:rgba(79,70,229,0.06); border:1px solid rgba(79,70,229,0.18); display:flex; align-items:center; justify-content:space-between; flex-wrap:gap; gap:16px;">
       <div>
-        <div style="font-size:14px; font-weight:500; margin-bottom:4px;">✨ AI Designs bhi dekhein</div>
-        <div style="font-size:12px; color:rgba(255,255,255,0.45);">Instagram par AI-generated design work bhi available hai</div>
+        <div style="font-size:14px; font-weight:600; margin-bottom:4px; color:var(--text-dark);">✨ AI Designs bhi dekhein</div>
+        <div style="font-size:12px; color:var(--text-muted);">Instagram par AI-generated design work bhi available hai</div>
       </div>
       <a href="https://www.instagram.com/graphic_dzyner?igsh=ZHVtdnc3Mmwxdmk5" target="_blank" class="btn-pink" style="white-space:nowrap; font-size:13px; padding:10px 20px;">View on Instagram →</a>
     </div>
@@ -913,8 +941,8 @@
   <section class="section" id="pricing">
     <div style="text-align:center; margin-bottom:40px;">
       <div class="sec-label" style="justify-content:center; display:flex;">Transparent Pricing</div>
-      <h2 style="font-family:'Playfair Display',serif; font-size:clamp(28px,4vw,42px); margin-bottom:10px;">Simple, clear pricing</h2>
-      <p style="font-size:14px; color:rgba(255,255,255,0.4); max-width:420px; margin:0 auto; line-height:1.7;">No hidden charges. No surprises. Just great design.</p>
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif; font-size:clamp(28px,4vw,42px); font-weight:700; color:var(--text-dark); margin-bottom:10px;">Simple, clear pricing</h2>
+      <p style="font-size:14px; color:var(--text-muted); max-width:420px; margin:0 auto; line-height:1.7;">No hidden charges. No surprises. Just great design.</p>
     </div>
 
     <!-- PRICING CATEGORY TABS -->
@@ -1037,7 +1065,7 @@
     <div class="price-panel" id="panel-social" style="display:none">
       <div class="pc-subtitle">Social Media Design Packages</div>
 
-      <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:16px;">Single Post Packages</div>
+      <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px;">Single Post Packages</div>
       <div class="pc-grid three" style="margin-bottom:40px;">
 
         <div class="pc-card glass">
@@ -1090,14 +1118,14 @@
 
       </div>
 
-      <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:16px;">Monthly Plans — Best Value</div>
+      <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px;">Monthly Plans — Best Value</div>
       <div class="pc-grid three">
 
         <div class="pc-card glass">
           <div class="pc-badge" style="background:rgba(16,185,129,0.25);color:#6ee7b7;border:1px solid rgba(16,185,129,0.3);">Highly Recommended</div>
           <div class="pc-tier">Starter Plan</div>
           <div class="pc-who">Small businesses &amp; startups building their social presence from scratch</div>
-          <div class="pc-price">₹<span>3,999</span><span style="font-size:14px;color:rgba(255,255,255,0.4);font-family:'DM Sans',sans-serif;">/mo</span></div>
+          <div class="pc-price">₹<span>3,999</span><span style="font-size:14px;color:var(--text-muted);font-family:'DM Sans',sans-serif;">/mo</span></div>
           <ul class="pc-features">
             <li>8 posts/month</li>
             <li>Basic–Standard mix designs</li>
@@ -1109,7 +1137,7 @@
           <div class="pc-badge">⭐ Recommended</div>
           <div class="pc-tier">Growth Plan</div>
           <div class="pc-who">Active brands, D2C businesses &amp; local stores wanting consistent high-quality content</div>
-          <div class="pc-price">₹<span>6,999</span><span style="font-size:14px;color:rgba(255,255,255,0.4);font-family:'DM Sans',sans-serif;">/mo</span></div>
+          <div class="pc-price">₹<span>6,999</span><span style="font-size:14px;color:var(--text-muted);font-family:'DM Sans',sans-serif;">/mo</span></div>
           <ul class="pc-features">
             <li>15 posts/month</li>
             <li>Better creatives + priority work</li>
@@ -1120,7 +1148,7 @@
         <div class="pc-card glass">
           <div class="pc-tier">Pro Plan</div>
           <div class="pc-who">Established brands, agencies &amp; businesses running full social media marketing</div>
-          <div class="pc-price">₹<span>9,999</span><span style="font-size:14px;color:rgba(255,255,255,0.4);font-family:'DM Sans',sans-serif;">/mo</span></div>
+          <div class="pc-price">₹<span>9,999</span><span style="font-size:14px;color:var(--text-muted);font-family:'DM Sans',sans-serif;">/mo</span></div>
           <ul class="pc-features">
             <li>25 posts/month</li>
             <li>Premium-style designs + faster delivery</li>
@@ -1137,7 +1165,7 @@
       <div class="pc-grid three">
 
         <div class="pc-card glass">
-          <div class="pc-tier">Basic <span style="font-size:12px;color:rgba(255,255,255,0.4);">6 Pages</span></div>
+          <div class="pc-tier">Basic <span style="font-size:12px;color:var(--text-muted);">6 Pages</span></div>
           <div class="pc-who">Small businesses, home brands &amp; local shops needing a simple product catalogue</div>
           <div class="pc-price">₹<span>2,499</span></div>
           <ul class="pc-features">
@@ -1153,7 +1181,7 @@
 
         <div class="pc-card glass pc-featured">
           <div class="pc-badge">⭐ Recommended</div>
-          <div class="pc-tier">Standard <span style="font-size:12px;color:rgba(255,255,255,0.4);">12 Pages</span></div>
+          <div class="pc-tier">Standard <span style="font-size:12px;color:var(--text-muted);">12 Pages</span></div>
           <div class="pc-who">Growing product businesses, retailers &amp; brands wanting a professional sales catalogue</div>
           <div class="pc-price">₹<span>4,999</span></div>
           <ul class="pc-features">
@@ -1168,7 +1196,7 @@
         </div>
 
         <div class="pc-card glass">
-          <div class="pc-tier">Premium <span style="font-size:12px;color:rgba(255,255,255,0.4);">15+ Pages</span></div>
+          <div class="pc-tier">Premium <span style="font-size:12px;color:var(--text-muted);">15+ Pages</span></div>
           <div class="pc-who">Established brands, wholesalers &amp; businesses with large product ranges</div>
           <div class="pc-price">₹<span>6,499</span></div>
           <ul class="pc-features">
@@ -1193,7 +1221,7 @@
       <div class="pc-grid three" style="margin-bottom:30px;">
 
         <div class="pc-card glass">
-          <div class="pc-tier">Basic Video <span style="font-size:12px;color:rgba(255,255,255,0.4);">30 sec</span></div>
+          <div class="pc-tier">Basic Video <span style="font-size:12px;color:var(--text-muted);">30 sec</span></div>
           <div class="pc-who">Small businesses, local shops &amp; startups wanting their first product promo video</div>
           <div class="pc-price">₹<span>1,999</span></div>
           <ul class="pc-features">
@@ -1209,7 +1237,7 @@
 
         <div class="pc-card glass pc-featured">
           <div class="pc-badge">⭐ Recommended</div>
-          <div class="pc-tier">Standard Video <span style="font-size:12px;color:rgba(255,255,255,0.4);">60 sec</span></div>
+          <div class="pc-tier">Standard Video <span style="font-size:12px;color:var(--text-muted);">60 sec</span></div>
           <div class="pc-who">D2C brands, product sellers &amp; businesses running social media ad campaigns</div>
           <div class="pc-price">₹<span>3,999</span></div>
           <ul class="pc-features">
@@ -1224,7 +1252,7 @@
         </div>
 
         <div class="pc-card glass">
-          <div class="pc-tier">Premium Video <span style="font-size:12px;color:rgba(255,255,255,0.4);">90+ sec</span></div>
+          <div class="pc-tier">Premium Video <span style="font-size:12px;color:var(--text-muted);">90+ sec</span></div>
           <div class="pc-who">Established brands, product launches &amp; businesses wanting cinematic brand storytelling</div>
           <div class="pc-price">₹<span>5,999</span></div>
           <ul class="pc-features">
@@ -1243,7 +1271,7 @@
 
       <!-- Add-ons -->
       <div class="glass" style="padding:24px 28px;">
-        <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:16px;">Add-ons</div>
+        <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px;">Add-ons</div>
         <div style="display:flex;flex-wrap:wrap;gap:12px;">
           <div style="padding:12px 20px;border-radius:12px;background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);font-size:13px;">🎙️ Voiceover (AI) &nbsp;<strong style="color:#e91e8c;">+₹1,000</strong></div>
           <div style="padding:12px 20px;border-radius:12px;background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);font-size:13px;">✍️ Script writing &nbsp;<strong style="color:#e91e8c;">+₹1,000</strong></div>
@@ -1308,14 +1336,14 @@
     <!-- ══ BUNDLES ══ -->
     <div class="price-panel" id="panel-bundles" style="display:none">
       <div class="pc-subtitle">Complete Design Packages</div>
-      <p style="font-size:14px;color:rgba(255,255,255,0.4);margin-bottom:32px;">Everything your brand needs, bundled together at the best price.</p>
+      <p style="font-size:14px;color:var(--text-muted);margin-bottom:32px;">Everything your brand needs, bundled together at the best price.</p>
       <div class="pc-grid two">
 
         <div class="pc-card glass" style="padding:36px 30px;">
           <div class="pc-tier" style="font-size:22px;">Starter Brand Kit</div>
           <div class="pc-who">New businesses, local startups &amp; solo entrepreneurs launching their brand from scratch</div>
           <div class="pc-price">₹<span>7,999</span></div>
-          <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:10px;">Includes</div>
+          <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">Includes</div>
           <ul class="pc-features">
             <li>Logo (Basic–Standard level)</li>
             <li>3 Social Media Posters</li>
@@ -1323,7 +1351,7 @@
             <li>Basic Label Design</li>
             <li>15-sec AI Video</li>
           </ul>
-          <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin:16px 0 10px;">Delivery</div>
+          <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin:16px 0 10px;">Delivery</div>
           <ul class="pc-features">
             <li>All files (JPG/PNG + basic source files)</li>
             <li>2–3 revision rounds overall</li>
@@ -1337,7 +1365,7 @@
           <div class="pc-tier" style="font-size:22px;">Growth Brand Kit</div>
           <div class="pc-who">Growing product brands, D2C businesses &amp; companies wanting a complete, consistent brand identity across all platforms</div>
           <div class="pc-price">₹<span>14,999</span></div>
-          <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:10px;">Includes</div>
+          <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">Includes</div>
           <ul class="pc-features">
             <li>Logo (Standard–Premium level)</li>
             <li>8 Social Media Posts</li>
@@ -1346,7 +1374,7 @@
             <li>30-sec AI Video</li>
             <li>6–8 Page Catalogue</li>
           </ul>
-          <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin:16px 0 10px;">Delivery</div>
+          <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin:16px 0 10px;">Delivery</div>
           <ul class="pc-features">
             <li>Full files (PNG, JPG, PDF, source files)</li>
             <li>Better design consistency across all items</li>
@@ -1360,8 +1388,8 @@
     </div>
 
     <!-- Bottom CTA -->
-    <div style="margin-top:32px; padding:20px 28px; border-radius:14px; background:rgba(245,158,11,0.07); border:1px solid rgba(245,158,11,0.18); font-size:13px; color:rgba(255,255,255,0.5); text-align:center;">
-      💬 Custom requirement hai? Seedha WhatsApp karo — <a href="https://wa.me/916399799895" target="_blank" style="color:#fcd34d; text-decoration:none; font-weight:500;">+91 63997 99895</a>
+    <div style="margin-top:32px; padding:20px 28px; border-radius:14px; background:rgba(79,70,229,0.06); border:1px solid rgba(79,70,229,0.15); font-size:13px; color:var(--text-muted); text-align:center;">
+      💬 Custom requirement hai? Seedha WhatsApp karo — <a href="https://wa.me/916399799895" target="_blank" style="color:var(--indigo-light); text-decoration:none; font-weight:600;">+91 63997 99895</a>
     </div>
   </section>
 
@@ -1416,8 +1444,8 @@
         <div class="edu-inst">Completed — 2019</div>
       </div>
 
-      <div class="edu-card glass" style="border-color: rgba(6,182,212,0.35);">
-        <div class="edu-year" style="color:rgba(6,182,212,0.9);">Certificate</div>
+      <div class="edu-card glass" style="border-color: rgba(79,70,229,0.3);">
+        <div class="edu-year" style="color:var(--indigo-light);">Certificate</div>
         <div class="edu-degree">CCC Computer Course</div>
         <div class="edu-inst">NIELIT Certified — Computer Fundamentals</div>
       </div>
@@ -1428,7 +1456,7 @@
   <!-- ── CONTACT ── -->
   <section class="section" id="contact">
     <div class="contact-card glass">
-      <h2>Kaam karein saath<br><em style="background:linear-gradient(135deg,#e91e8c,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:italic;">milke banaate hain kuch alag</em></h2>
+      <h2>Kaam karein saath<br><em style="color:var(--indigo-light);font-style:italic;">milke banaate hain kuch alag</em></h2>
       <p>Freelance projects, collaborations aur business inquiries ke liye reach out karein.</p>
       <div class="contact-links">
         <a href="https://wa.me/916399799895" target="_blank" class="contact-btn wa">
