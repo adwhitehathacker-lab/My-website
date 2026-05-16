@@ -814,49 +814,169 @@
     </div>
   </section>
 
-  <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px;">
-    
-    <div class="pricing-card" style="border: 1px solid #ddd; padding: 20px; border-radius: 10px; text-align: center; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-        <h3 style="color: #333; margin-bottom: 10px;">Basic (Design)</h3>
-        <div class="price-amount" style="font-size: 24px; font-weight: bold; color: #ff6b6b; margin: 15px 0;">₹1,499</div>
-        <p style="font-size: 14px; color: #666; font-weight: 500;">1 Revision included</p>
-        <p style="font-size: 14px; color: #777;">3 Professional Designs tailored to your brand.</p>
+  <section class="section" id="pricing" style="background: #0f172a; padding: 60px 20px; color: #fff; font-family: sans-serif;">
+    <div class="sec-label" style="text-align: center; font-size: 2.2rem; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; color: #38bdf8;">Transparent Pricing</div>
+    <p style="text-align: center; color: #94a3b8; max-width: 600px; margin: 0 auto 40px auto; font-size: 1rem; line-height: 1.6;">Simple, clear pricing. No hidden charges. No surprises. Just great design.</p>
+
+    <div style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 15px; margin-bottom: 40px; justify-content: flex-start; max-width: 1000px; margin-left: auto; margin-right: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
+        <button onclick="switchTab('logo-pkg')" class="pr-tab-btn active-tab" style="padding: 10px 24px; background: #38bdf8; border: 1px solid #38bdf8; border-radius: 30px; color: #0f172a; font-weight: 600; cursor: pointer; white-space: nowrap; transition: all 0.3s;">Logo Design</button>
+        <button onclick="switchTab('poster-pkg')" class="pr-tab-btn" style="padding: 10px 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; color: #fff; font-weight: 500; cursor: pointer; white-space: nowrap; transition: all 0.3s;">Poster Design</button>
+        <button onclick="switchTab('social-pkg')" class="pr-tab-btn" style="padding: 10px 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; color: #fff; font-weight: 500; cursor: pointer; white-space: nowrap; transition: all 0.3s;">Social Media</button>
+        <button onclick="switchTab('catalogue-pkg')" class="pr-tab-btn" style="padding: 10px 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; color: #fff; font-weight: 500; cursor: pointer; white-space: nowrap; transition: all 0.3s;">Catalogue</button>
+        <button onclick="switchTab('ai-video-pkg')" class="pr-tab-btn" style="padding: 10px 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; color: #fff; font-weight: 500; cursor: pointer; white-space: nowrap; transition: all 0.3s;">AI Video</button>
+        <button onclick="switchTab('package-pkg')" class="pr-tab-btn" style="padding: 10px 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; color: #fff; font-weight: 500; cursor: pointer; white-space: nowrap; transition: all 0.3s;">Packaging</button>
+        <button onclick="switchTab('bundles-pkg')" class="pr-tab-btn" style="padding: 10px 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; color: #fff; font-weight: 500; cursor: pointer; white-space: nowrap; transition: all 0.3s;">Bundle & Save</button>
     </div>
 
-    <div class="pricing-card" style="border: 1px solid #ddd; padding: 20px; border-radius: 10px; text-align: center; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-        <h3 style="color: #333; margin-bottom: 10px;">Standard (Design)</h3>
-        <div class="price-amount" style="font-size: 24px; font-weight: bold; color: #ff6b6b; margin: 15px 0;">₹2,399</div>
-        <p style="font-size: 14px; color: #666; font-weight: 500;">2 Revisions included</p>
-        <p style="font-size: 14px; color: #777;">5 High-Quality Creative Designs for your social media or business.</p>
-    </div>
+    <div style="max-width: 1200px; margin: 0 auto;">
+        
+        <div id="logo-pkg" class="pricing-tab-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+            <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
+                <h4 style="font-size: 1.3rem; margin: 0 0 5px 0;">Basic Logo</h4>
+                <p style="font-size: 12px; color: #94a3b8; min-height: 40px;">Freelancers, solo entrepreneurs & new small businesses needing a clean logo.</p>
+                <div style="font-size: 2rem; font-weight: 700; color: #38bdf8; margin: 20px 0;">₹1,499</div>
+                <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; color: #cbd5e1; line-height: 2;">
+                    <li>✓ 1 Concept</li><li>✓ 2 Revisions</li><li>✓ Wordmark / Simple Logo</li><li>✓ JPG + PNG File</li><li>⏱ Timeline: 2-3 Days</li>
+                </ul>
+                <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20to%20order%20Basic%20Logo%20Package." target="_blank" style="display: block; text-align: center; background: #38bdf8; color: #0f172a; padding: 12px; border-radius: 8px; font-weight: 600; text-decoration: none;">Get Started</a>
+            </div>
+            <div style="background: rgba(30, 41, 59, 0.9); border: 2px solid #38bdf8; padding: 30px; border-radius: 16px; position: relative;">
+                <span style="position: absolute; top: -12px; right: 20px; background: #38bdf8; color: #0f172a; padding: 2px 12px; font-size: 11px; font-weight: 700; border-radius: 10px; text-transform: uppercase;">⭐ Recommended</span>
+                <h4 style="font-size: 1.3rem; margin: 0 0 5px 0;">Standard Logo</h4>
+                <p style="font-size: 12px; color: #94a3b8; min-height: 40px;">Small businesses & startups wanting a polished logo with brand thinking.</p>
+                <div style="font-size: 2rem; font-weight: 700; color: #38bdf8; margin: 20px 0;">₹2,499</div>
+                <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; color: #cbd5e1; line-height: 2;">
+                    <li>✓ 2–3 Concepts</li><li>✓ 4 Revisions</li><li>✓ Premium Typography</li><li>✓ JPG, PNG + Vector (PDF/SVG)</li><li>⏱ Timeline: 3 Days</li>
+                </ul>
+                <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20to%20order%20Standard%20Logo%20Package." target="_blank" style="display: block; text-align: center; background: #38bdf8; color: #0f172a; padding: 12px; border-radius: 8px; font-weight: 600; text-decoration: none;">Get Started</a>
+            </div>
+            <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
+                <h4 style="font-size: 1.3rem; margin: 0 0 5px 0;">Premium Identity</h4>
+                <p style="font-size: 12px; color: #94a3b8; min-height: 40px;">Established brands wanting a complete professional visual identity.</p>
+                <div style="font-size: 2rem; font-weight: 700; color: #38bdf8; margin: 20px 0;">₹4,499</div>
+                <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; color: #cbd5e1; line-height: 2;">
+                    <li>✓ 3–4 Concepts</li><li>✓ Unlimited Revisions</li><li>✓ Logo Variations + Full Files</li><li>✓ Basic Brand Mockups</li><li>⏱ Timeline: 3–5 Days</li>
+                </ul>
+                <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20to%20order%20Premium%20Logo%20Package." target="_blank" style="display: block; text-align: center; background: #38bdf8; color: #0f172a; padding: 12px; border-radius: 8px; font-weight: 600; text-decoration: none;">Get Started</a>
+            </div>
+        </div>
 
-    <div class="pricing-card" style="border: 1px solid #ddd; padding: 20px; border-radius: 10px; text-align: center; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-        <h3 style="color: #333; margin-bottom: 10px;">Premium (Design)</h3>
-        <div class="price-amount" style="font-size: 24px; font-weight: bold; color: #ff6b6b; margin: 15px 0;">₹4,499</div>
-        <p style="font-size: 14px; color: #666; font-weight: 500;">Unlimited Revisions</p>
-        <p style="font-size: 14px; color: #777;">10 Premium Brand Designs + Source Files included.</p>
-    </div>
+        <div id="poster-pkg" class="pricing-tab-content" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+            <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
+                <h4 style="font-size: 1.3rem; margin: 0 0 5px 0;">Basic Poster</h4>
+                <p style="font-size: 12px; color: #94a3b8; min-height: 40px;">Individual sellers & home businesses needing a quick promotional post.</p>
+                <div style="font-size: 2rem; font-weight: 700; color: #ec4899; margin: 20px 0;">₹499</div>
+                <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; color: #cbd5e1; line-height: 2;">
+                    <li>✓ 1 Concept</li><li>✓ 1–2 Revisions</li><li>✓ Basic Layout (Text + Image)</li><li>✓ JPG/PNG Export</li><li>⏱ Timeline: 24 Hours</li>
+                </ul>
+                <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20to%20order%20Basic%20Poster%20Package." target="_blank" style="display: block; text-align: center; background: #ec4899; color: #fff; padding: 12px; border-radius: 8px; font-weight: 600; text-decoration: none;">Get Started</a>
+            </div>
+            <div style="background: rgba(30, 41, 59, 0.9); border: 2px solid #ec4899; padding: 30px; border-radius: 16px; position: relative;">
+                <span style="position: absolute; top: -12px; right: 20px; background: #ec4899; color: #fff; padding: 2px 12px; font-size: 11px; font-weight: 700; border-radius: 10px;">⭐ Recommended</span>
+                <h4 style="font-size: 1.3rem; margin: 0 0 5px 0;">Standard Poster</h4>
+                <p style="font-size: 12px; color: #94a3b8; min-height: 40px;">Small brands wanting eye-catching marketing creative designs.</p>
+                <div style="font-size: 2rem; font-weight: 700; color: #ec4899; margin: 20px 0;">₹999</div>
+                <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; color: #cbd5e1; line-height: 2;">
+                    <li>✓ 2 Concepts</li><li>✓ 3–4 Revisions</li><li>✓ Better Typography & Composition</li><li>✓ Platform Optimized Sizes</li><li>⏱ Timeline: 24 Hours</li>
+                </ul>
+                <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20to%20order%20Standard%20Poster%20Package." target="_blank" style="display: block; text-align: center; background: #ec4899; color: #fff; padding: 12px; border-radius: 8px; font-weight: 600; text-decoration: none;">Get Started</a>
+            </div>
+            <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
+                <h4 style="font-size: 1.3rem; margin: 0 0 5px 0;">Premium Ad Creative</h4>
+                <p style="font-size: 12px; color: #94a3b8; min-height: 40px;">Product brands & e-commerce stores running paid ad campaigns.</p>
+                <div style="font-size: 2rem; font-weight: 700; color: #ec4899; margin: 20px 0;">₹1,999</div>
+                <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; color: #cbd5e1; line-height: 2;">
+                    <li>✓ 2–3 Concepts</li><li>✓ Multiple Revisions (Fair Use)</li><li>✓ Advanced Visual Effects</li><li>✓ Mockup Presentation Preview</li><li>⏱ Timeline: 1–2 Days</li>
+                </ul>
+                <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20to%20order%20Premium%20Poster%20Package." target="_blank" style="display: block; text-align: center; background: #ec4899; color: #fff; padding: 12px; border-radius: 8px; font-weight: 600; text-decoration: none;">Get Started</a>
+            </div>
+        </div>
 
-    <div class="pricing-card" style="border: 1px solid #ddd; padding: 20px; border-radius: 10px; text-align: center; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-        <h3 style="color: #333; margin-bottom: 10px;">Solo Reel</h3>
-        <div class="price-amount" style="font-size: 24px; font-weight: bold; color: #4dadf7; margin: 15px 0;">₹1,999</div>
-        <p style="font-size: 14px; color: #666; font-weight: 500;">Per Video Pricing</p>
-        <p style="font-size: 14px; color: #777;">1 High-End Cinematic Reel/Short with advanced transitions & audio syncing.</p>
-    </div>
+        <div id="social-pkg" class="pricing-tab-content" style="display: none;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px;">
+                <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 25px; border-radius: 16px;">
+                    <h5 style="font-size: 1.1rem; margin: 0 0 5px 0;">Basic Single Post</h5>
+                    <div style="font-size: 1.8rem; font-weight: 700; color: #f59e0b; margin: 15px 0;">₹499</div>
+                    <p style="font-size: 13px; color: #cbd5e1;">1 Concept, 1-2 Revisions, Single platform size, JPG/PNG delivery. (24 Hours)</p>
+                </div>
+                <div style="background: rgba(30, 41, 59, 0.9); border: 2px solid #f59e0b; padding: 25px; border-radius: 16px; position: relative;">
+                    <span style="position: absolute; top: -10px; right: 15px; background: #f59e0b; color: #0f172a; padding: 1px 10px; font-size: 10px; font-weight: 700; border-radius: 10px;">RECOMMENDED</span>
+                    <h5 style="font-size: 1.1rem; margin: 0 0 5px 0;">Standard Single Post</h5>
+                    <div style="font-size: 1.8rem; font-weight: 700; color: #f59e0b; margin: 15px 0;">₹999</div>
+                    <p style="font-size: 13px; color: #cbd5e1;">2 Concepts, 3-4 Revisions, Optimized for Insta + FB, High-quality export. (24 Hours)</p>
+                </div>
+                <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 25px; border-radius: 16px;">
+                    <h5 style="font-size: 1.1rem; margin: 0 0 5px 0;">Premium Scroll-Stopper</h5>
+                    <div style="font-size: 1.8rem; font-weight: 700; color: #f59e0b; margin: 15px 0;">₹1,999</div>
+                    <p style="font-size: 13px; color: #cbd5e1;">Advanced layout effects, scroll-stopping ad style, multi-size (Post + Story). (1-2 Days)</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin: 30px 0 20px 0; font-size: 1.3rem; font-weight: 600; color: #f59e0b;">📅 Monthly Plans — Best Value</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+                <div style="background: rgba(15, 23, 42, 0.6); border: 1px dashed rgba(245,158,11,0.4); padding: 25px; border-radius: 16px; text-align: center;">
+                    <h4>Starter Plan</h4>
+                    <div style="font-size: 1.8rem; font-weight: bold; margin: 10px 0;">₹3,999<span style="font-size: 14px; color: #94a3b8;">/mo</span></div>
+                    <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 15px;">📊 8 Posts / Month (Mix Design level)</p>
+                    <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20the%20Starter%20Monthly%20Plan." target="_blank" style="padding: 8px 20px; background: #f59e0b; color: #0f172a; border-radius: 5px; text-decoration: none; font-size: 13px; font-weight: 600; display: inline-block;">Subscribe Kit</a>
+                </div>
+                <div style="background: rgba(15, 23, 42, 0.8); border: 2px solid #f59e0b; padding: 25px; border-radius: 16px; text-align: center;">
+                    <h4>Growth Plan</h4>
+                    <div style="font-size: 1.8rem; font-weight: bold; margin: 10px 0;">₹6,999<span style="font-size: 14px; color: #94a3b8;">/mo</span></div>
+                    <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 15px;">🚀 15 Posts / Month (Priority & Premium Work)</p>
+                    <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20the%20Growth%20Monthly%20Plan." target="_blank" style="padding: 8px 20px; background: #f59e0b; color: #0f172a; border-radius: 5px; text-decoration: none; font-size: 13px; font-weight: 600; display: inline-block;">Subscribe Kit</a>
+                </div>
+                <div style="background: rgba(15, 23, 42, 0.6); border: 1px dashed rgba(245,158,11,0.4); padding: 25px; border-radius: 16px; text-align: center;">
+                    <h4>Pro Plan</h4>
+                    <div style="font-size: 1.8rem; font-weight: bold; margin: 10px 0;">₹9,999<span style="font-size: 14px; color: #94a3b8;">/mo</span></div>
+                    <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 15px;">⚡ 25 Posts / Month (Full Premium Designs + Fast Delivery)</p>
+                    <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20the%20Pro%20Monthly%20Plan." target="_blank" style="padding: 8px 20px; background: #f59e0b; color: #0f172a; border-radius: 5px; text-decoration: none; font-size: 13px; font-weight: 600; display: inline-block;">Subscribe Kit</a>
+                </div>
+            </div>
+        </div>
 
-    <div class="pricing-card" style="border: 1px solid #ddd; padding: 20px; border-radius: 10px; text-align: center; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 3px solid #4dadf7;">
-        <h3 style="color: #333; margin-bottom: 10px;">Trio Reel Pack</h3>
-        <div class="price-amount" style="font-size: 24px; font-weight: bold; color: #4dadf7; margin: 15px 0;">₹5,899</div>
-        <p style="font-size: 14px; color: #2b8a3e; font-weight: bold;">🔥 Value Pack (3 Videos)</p>
-        <p style="font-size: 14px; color: #777;">3 Premium Edited Cinematic Reels for your growth.</p>
-    </div>
+        <div id="catalogue-pkg" class="pricing-tab-content" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+            <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
+                <h4>Basic (6 Pages)</h4>
+                <div style="font-size: 2rem; font-weight: 700; color: #10b981; margin: 15px 0;">₹2,499</div>
+                <p style="font-size: 13px; color: #cbd5e1; line-height: 1.8;">✓ Cover + 5 Inner Pages<br>✓ Clean and Minimal layout<br>✓ 1–2 Revisions<br>✓ Print-Ready PDF</p>
+                <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20the%20Basic%20Catalogue%20Package." target="_blank" style="display:block; text-align:center; background:#10b981; color:#fff; padding:10px; border-radius:8px; text-decoration:none; margin-top:15px;">Get Started</a>
+            </div>
+            <div style="background: rgba(30, 41, 59, 0.9); border: 2px solid #10b981; padding: 30px; border-radius: 16px;">
+                <h4>Standard (12 Pages)</h4>
+                <div style="font-size: 2rem; font-weight: 700; color: #10b981; margin: 15px 0;">₹4,499</div>
+                <p style="font-size: 13px; color: #cbd5e1; line-height: 1.8;">✓ Cover + 11 Inner Pages<br>✓ Professional Visual Flow & Spacing<br>✓ Print PDF + Source File<br>⏱ 2–3 Days Delivery</p>
+                <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20the%20Standard%20Catalogue%20Package." target="_blank" style="display:block; text-align:center; background:#10b981; color:#fff; padding:10px; border-radius:8px; text-decoration:none; margin-top:15px;">Get Started</a>
+            </div>
+            <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
+                <h4>Premium (15+ Pages)</h4>
+                <div style="font-size: 2rem; font-weight: 700; color: #10b981; margin: 15px 0;">₹6,499</div>
+                <p style="font-size: 13px; color: #cbd5e1; line-height: 1.8;">✓ Up to 15 Pages Included<br>✓ Premium Layout Hierarchy & Mockup<br>✓ +₹500 Per Extra Page after 15<br>✓ Print + Source Files</p>
+                <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20the%20Premium%20Catalogue%20Package." target="_blank" style="display:block; text-align:center; background:#10b981; color:#fff; padding:10px; border-radius:8px; text-decoration:none; margin-top:15px;">Get Started</a>
+            </div>
+        </div>
 
-  </div>
- <div style="margin: 30px auto 10px auto; max-width: 500px; background: rgba(255,255,255,0.04); border: 1px dashed rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; text-align: center; color: #fff; font-size: 14px; width: 90%;">
-        💬 Custom project hai? WhatsApp par discuss karte hain — 
-        <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20have%20a%20custom%20project%20requirement." target="_blank" style="color: #06b6d4; text-decoration: none; font-weight: bold; margin-left: 5px;">Let's Chat →</a>
-    </div>
-</section>
+        <div id="ai-video-pkg" class="pricing-tab-content" style="display: none;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 30px;">
+                <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
+                    <h4>Basic Video (30s)</h4>
+                    <div style="font-size: 2rem; font-weight: 700; color: #a855f7; margin: 15px 0;">₹1,999</div>
+                    <p style="font-size: 13px; color: #cbd5e1; line-height: 1.8;">✓ Basic AI Visuals (Image/Text to Video)<br>✓ Light Text Overlay & HD Export<br>✓ 1–2 Revisions</p>
+                </div>
+                <div style="background: rgba(30, 41, 59, 0.9); border: 2px solid #a855f7; padding: 30px; border-radius: 16px;">
+                    <h4>Standard Video (60s)</h4>
+                    <div style="font-size: 2rem; font-weight: 700; color: #a855f7; margin: 15px 0;">₹3,999</div>
+                    <p style="font-size: 13px; color: #cbd5e1; line-height: 1.8;">✓ Smooth Scene Flow & Motion Consistency<br>✓ Text Animation + Perfect Music Sync<br>✓ 2–3 Revisions</p>
+                </div>
+                <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
+                    <h4>Premium Video (90s+)</h4>
+                    <div style="font-size: 2rem; font-weight: 700; color: #a855f7; margin: 15px 0;">₹5,999</div>
+                    <p style="font-size: 13px; color: #cbd5e1; line-height: 1.8;">✓ Concept Planning (Basic Storytelling)<br>✓ Advanced Effects & Premium Transitions<br>✓ Unlimited Revisions (Fair Use)</p>
+                </div>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 20px; border-radius: 12px; max-width: 600px; margin: 0 auto; text-align: center;">
+                <div
   <!-- ── EXPERIENCE ── -->
   <section class="section" id="experience">
     <div class="sec-label">Experience</div>
