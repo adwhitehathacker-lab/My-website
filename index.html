@@ -532,6 +532,101 @@
   .contact-btn.em { border-color: rgba(6,182,212,0.4); }
   .contact-btn.em:hover { background: rgba(6,182,212,0.12); }
 
+  /* ── PRICING NEW ── */
+  .pc-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    text-align: center;
+  }
+  .pc-grid { display: grid; gap: 20px; }
+  .pc-grid.three { grid-template-columns: repeat(3, 1fr); }
+  .pc-grid.two { grid-template-columns: repeat(2, 1fr); }
+
+  .pc-card {
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    transition: transform 0.22s;
+  }
+  .pc-card:hover { transform: translateY(-4px); }
+  .pc-card.pc-featured { border-color: rgba(233,30,140,0.45); }
+  .pc-badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 5px 14px;
+    border-radius: 100px;
+    background: linear-gradient(135deg, #e91e8c, #7c3aed);
+    color: #fff;
+    letter-spacing: 0.4px;
+    font-weight: 500;
+    width: fit-content;
+  }
+  .pc-tier {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .pc-who {
+    font-size: 12px;
+    color: rgba(255,255,255,0.38);
+    line-height: 1.6;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--glass-border);
+  }
+  .pc-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1;
+  }
+  .pc-price span {
+    font-size: 36px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff 40%, #e91e8c);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .pc-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+  .pc-features li {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .pc-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #e91e8c;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .pc-timeline {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    padding-top: 8px;
+    border-top: 1px solid var(--glass-border);
+  }
+
+  @media (max-width: 700px) {
+    .pc-grid.three { grid-template-columns: 1fr; }
+    .pc-grid.two { grid-template-columns: 1fr; }
+  }
+  @media (min-width: 701px) and (max-width: 900px) {
+    .pc-grid.three { grid-template-columns: 1fr 1fr; }
+  }
+
   /* footer */
   footer {
     position: relative;
@@ -814,169 +909,462 @@
     </div>
   </section>
 
-  <section class="section" id="pricing" style="background: #0f172a; padding: 60px 20px; color: #fff; font-family: sans-serif;">
-    <div class="sec-label" style="text-align: center; font-size: 2.2rem; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; color: #38bdf8;">Transparent Pricing</div>
-    <p style="text-align: center; color: #94a3b8; max-width: 600px; margin: 0 auto 40px auto; font-size: 1rem; line-height: 1.6;">Simple, clear pricing. No hidden charges. No surprises. Just great design.</p>
-
-    <div style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 15px; margin-bottom: 40px; justify-content: flex-start; max-width: 1000px; margin-left: auto; margin-right: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
-        <button onclick="switchTab('logo-pkg')" class="pr-tab-btn active-tab" style="padding: 10px 24px; background: #38bdf8; border: 1px solid #38bdf8; border-radius: 30px; color: #0f172a; font-weight: 600; cursor: pointer; white-space: nowrap; transition: all 0.3s;">Logo Design</button>
-        <button onclick="switchTab('poster-pkg')" class="pr-tab-btn" style="padding: 10px 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; color: #fff; font-weight: 500; cursor: pointer; white-space: nowrap; transition: all 0.3s;">Poster Design</button>
-        <button onclick="switchTab('social-pkg')" class="pr-tab-btn" style="padding: 10px 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; color: #fff; font-weight: 500; cursor: pointer; white-space: nowrap; transition: all 0.3s;">Social Media</button>
-        <button onclick="switchTab('catalogue-pkg')" class="pr-tab-btn" style="padding: 10px 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; color: #fff; font-weight: 500; cursor: pointer; white-space: nowrap; transition: all 0.3s;">Catalogue</button>
-        <button onclick="switchTab('ai-video-pkg')" class="pr-tab-btn" style="padding: 10px 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; color: #fff; font-weight: 500; cursor: pointer; white-space: nowrap; transition: all 0.3s;">AI Video</button>
-        <button onclick="switchTab('package-pkg')" class="pr-tab-btn" style="padding: 10px 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; color: #fff; font-weight: 500; cursor: pointer; white-space: nowrap; transition: all 0.3s;">Packaging</button>
-        <button onclick="switchTab('bundles-pkg')" class="pr-tab-btn" style="padding: 10px 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; color: #fff; font-weight: 500; cursor: pointer; white-space: nowrap; transition: all 0.3s;">Bundle & Save</button>
+  <!-- ── PRICING ── -->
+  <section class="section" id="pricing">
+    <div style="text-align:center; margin-bottom:40px;">
+      <div class="sec-label" style="justify-content:center; display:flex;">Transparent Pricing</div>
+      <h2 style="font-family:'Playfair Display',serif; font-size:clamp(28px,4vw,42px); margin-bottom:10px;">Simple, clear pricing</h2>
+      <p style="font-size:14px; color:rgba(255,255,255,0.4); max-width:420px; margin:0 auto; line-height:1.7;">No hidden charges. No surprises. Just great design.</p>
     </div>
 
-    <div style="max-width: 1200px; margin: 0 auto;">
-        
-        <div id="logo-pkg" class="pricing-tab-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
-            <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
-                <h4 style="font-size: 1.3rem; margin: 0 0 5px 0;">Basic Logo</h4>
-                <p style="font-size: 12px; color: #94a3b8; min-height: 40px;">Freelancers, solo entrepreneurs & new small businesses needing a clean logo.</p>
-                <div style="font-size: 2rem; font-weight: 700; color: #38bdf8; margin: 20px 0;">₹1,499</div>
-                <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; color: #cbd5e1; line-height: 2;">
-                    <li>✓ 1 Concept</li><li>✓ 2 Revisions</li><li>✓ Wordmark / Simple Logo</li><li>✓ JPG + PNG File</li><li>⏱ Timeline: 2-3 Days</li>
-                </ul>
-                <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20to%20order%20Basic%20Logo%20Package." target="_blank" style="display: block; text-align: center; background: #38bdf8; color: #0f172a; padding: 12px; border-radius: 8px; font-weight: 600; text-decoration: none;">Get Started</a>
-            </div>
-            <div style="background: rgba(30, 41, 59, 0.9); border: 2px solid #38bdf8; padding: 30px; border-radius: 16px; position: relative;">
-                <span style="position: absolute; top: -12px; right: 20px; background: #38bdf8; color: #0f172a; padding: 2px 12px; font-size: 11px; font-weight: 700; border-radius: 10px; text-transform: uppercase;">⭐ Recommended</span>
-                <h4 style="font-size: 1.3rem; margin: 0 0 5px 0;">Standard Logo</h4>
-                <p style="font-size: 12px; color: #94a3b8; min-height: 40px;">Small businesses & startups wanting a polished logo with brand thinking.</p>
-                <div style="font-size: 2rem; font-weight: 700; color: #38bdf8; margin: 20px 0;">₹2,499</div>
-                <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; color: #cbd5e1; line-height: 2;">
-                    <li>✓ 2–3 Concepts</li><li>✓ 4 Revisions</li><li>✓ Premium Typography</li><li>✓ JPG, PNG + Vector (PDF/SVG)</li><li>⏱ Timeline: 3 Days</li>
-                </ul>
-                <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20to%20order%20Standard%20Logo%20Package." target="_blank" style="display: block; text-align: center; background: #38bdf8; color: #0f172a; padding: 12px; border-radius: 8px; font-weight: 600; text-decoration: none;">Get Started</a>
-            </div>
-            <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
-                <h4 style="font-size: 1.3rem; margin: 0 0 5px 0;">Premium Identity</h4>
-                <p style="font-size: 12px; color: #94a3b8; min-height: 40px;">Established brands wanting a complete professional visual identity.</p>
-                <div style="font-size: 2rem; font-weight: 700; color: #38bdf8; margin: 20px 0;">₹4,499</div>
-                <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; color: #cbd5e1; line-height: 2;">
-                    <li>✓ 3–4 Concepts</li><li>✓ Unlimited Revisions</li><li>✓ Logo Variations + Full Files</li><li>✓ Basic Brand Mockups</li><li>⏱ Timeline: 3–5 Days</li>
-                </ul>
-                <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20to%20order%20Premium%20Logo%20Package." target="_blank" style="display: block; text-align: center; background: #38bdf8; color: #0f172a; padding: 12px; border-radius: 8px; font-weight: 600; text-decoration: none;">Get Started</a>
-            </div>
+    <!-- PRICING CATEGORY TABS -->
+    <div class="tabs" style="justify-content:center; margin-bottom:36px;" id="priceTabs">
+      <div class="tab active" onclick="priceTab(this,'logo')">Logo Design</div>
+      <div class="tab" onclick="priceTab(this,'social')">Social Media</div>
+      <div class="tab" onclick="priceTab(this,'poster')">Poster Design</div>
+      <div class="tab" onclick="priceTab(this,'catalogue')">Catalogue</div>
+      <div class="tab" onclick="priceTab(this,'aivideo')">AI Video</div>
+      <div class="tab" onclick="priceTab(this,'packaging')">Packaging</div>
+      <div class="tab" onclick="priceTab(this,'bundles')">Bundles</div>
+    </div>
+
+    <!-- ══ LOGO ══ -->
+    <div class="price-panel" id="panel-logo">
+      <div class="pc-subtitle">Logo Design Packages</div>
+      <div class="pc-grid three">
+
+        <div class="pc-card glass">
+          <div class="pc-tier">Basic</div>
+          <div class="pc-who">Freelancers, solo entrepreneurs &amp; new small businesses needing a simple, clean logo on a budget</div>
+          <div class="pc-price">₹<span>1,499</span></div>
+          <ul class="pc-features">
+            <li>1 concept</li>
+            <li>2 revisions</li>
+            <li>Wordmark / simple logo</li>
+            <li>JPG + PNG file</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 2–3 days</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Basic%20Logo%20Design%20%E2%82%B91%2C499" target="_blank" class="btn-ghost" style="display:block;text-align:center;margin-top:auto;">Get Started</a>
         </div>
 
-        <div id="poster-pkg" class="pricing-tab-content" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
-            <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
-                <h4 style="font-size: 1.3rem; margin: 0 0 5px 0;">Basic Poster</h4>
-                <p style="font-size: 12px; color: #94a3b8; min-height: 40px;">Individual sellers & home businesses needing a quick promotional post.</p>
-                <div style="font-size: 2rem; font-weight: 700; color: #ec4899; margin: 20px 0;">₹499</div>
-                <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; color: #cbd5e1; line-height: 2;">
-                    <li>✓ 1 Concept</li><li>✓ 1–2 Revisions</li><li>✓ Basic Layout (Text + Image)</li><li>✓ JPG/PNG Export</li><li>⏱ Timeline: 24 Hours</li>
-                </ul>
-                <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20to%20order%20Basic%20Poster%20Package." target="_blank" style="display: block; text-align: center; background: #ec4899; color: #fff; padding: 12px; border-radius: 8px; font-weight: 600; text-decoration: none;">Get Started</a>
-            </div>
-            <div style="background: rgba(30, 41, 59, 0.9); border: 2px solid #ec4899; padding: 30px; border-radius: 16px; position: relative;">
-                <span style="position: absolute; top: -12px; right: 20px; background: #ec4899; color: #fff; padding: 2px 12px; font-size: 11px; font-weight: 700; border-radius: 10px;">⭐ Recommended</span>
-                <h4 style="font-size: 1.3rem; margin: 0 0 5px 0;">Standard Poster</h4>
-                <p style="font-size: 12px; color: #94a3b8; min-height: 40px;">Small brands wanting eye-catching marketing creative designs.</p>
-                <div style="font-size: 2rem; font-weight: 700; color: #ec4899; margin: 20px 0;">₹999</div>
-                <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; color: #cbd5e1; line-height: 2;">
-                    <li>✓ 2 Concepts</li><li>✓ 3–4 Revisions</li><li>✓ Better Typography & Composition</li><li>✓ Platform Optimized Sizes</li><li>⏱ Timeline: 24 Hours</li>
-                </ul>
-                <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20to%20order%20Standard%20Poster%20Package." target="_blank" style="display: block; text-align: center; background: #ec4899; color: #fff; padding: 12px; border-radius: 8px; font-weight: 600; text-decoration: none;">Get Started</a>
-            </div>
-            <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
-                <h4 style="font-size: 1.3rem; margin: 0 0 5px 0;">Premium Ad Creative</h4>
-                <p style="font-size: 12px; color: #94a3b8; min-height: 40px;">Product brands & e-commerce stores running paid ad campaigns.</p>
-                <div style="font-size: 2rem; font-weight: 700; color: #ec4899; margin: 20px 0;">₹1,999</div>
-                <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; color: #cbd5e1; line-height: 2;">
-                    <li>✓ 2–3 Concepts</li><li>✓ Multiple Revisions (Fair Use)</li><li>✓ Advanced Visual Effects</li><li>✓ Mockup Presentation Preview</li><li>⏱ Timeline: 1–2 Days</li>
-                </ul>
-                <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20to%20order%20Premium%20Poster%20Package." target="_blank" style="display: block; text-align: center; background: #ec4899; color: #fff; padding: 12px; border-radius: 8px; font-weight: 600; text-decoration: none;">Get Started</a>
-            </div>
+        <div class="pc-card glass pc-featured">
+          <div class="pc-badge">⭐ Recommended</div>
+          <div class="pc-tier">Standard</div>
+          <div class="pc-who">Small businesses &amp; startups wanting a polished logo with brand thinking included</div>
+          <div class="pc-price">₹<span>2,499</span></div>
+          <ul class="pc-features">
+            <li>2–3 concepts</li>
+            <li>4 revisions</li>
+            <li>Better typography + basic brand thinking</li>
+            <li>JPG, PNG + basic vector (PDF/SVG)</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 3 days</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Standard%20Logo%20Design%20%E2%82%B92%2C499" target="_blank" class="btn-pink" style="display:block;text-align:center;">Get Started</a>
         </div>
 
-        <div id="social-pkg" class="pricing-tab-content" style="display: none;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px;">
-                <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 25px; border-radius: 16px;">
-                    <h5 style="font-size: 1.1rem; margin: 0 0 5px 0;">Basic Single Post</h5>
-                    <div style="font-size: 1.8rem; font-weight: 700; color: #f59e0b; margin: 15px 0;">₹499</div>
-                    <p style="font-size: 13px; color: #cbd5e1;">1 Concept, 1-2 Revisions, Single platform size, JPG/PNG delivery. (24 Hours)</p>
-                </div>
-                <div style="background: rgba(30, 41, 59, 0.9); border: 2px solid #f59e0b; padding: 25px; border-radius: 16px; position: relative;">
-                    <span style="position: absolute; top: -10px; right: 15px; background: #f59e0b; color: #0f172a; padding: 1px 10px; font-size: 10px; font-weight: 700; border-radius: 10px;">RECOMMENDED</span>
-                    <h5 style="font-size: 1.1rem; margin: 0 0 5px 0;">Standard Single Post</h5>
-                    <div style="font-size: 1.8rem; font-weight: 700; color: #f59e0b; margin: 15px 0;">₹999</div>
-                    <p style="font-size: 13px; color: #cbd5e1;">2 Concepts, 3-4 Revisions, Optimized for Insta + FB, High-quality export. (24 Hours)</p>
-                </div>
-                <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 25px; border-radius: 16px;">
-                    <h5 style="font-size: 1.1rem; margin: 0 0 5px 0;">Premium Scroll-Stopper</h5>
-                    <div style="font-size: 1.8rem; font-weight: 700; color: #f59e0b; margin: 15px 0;">₹1,999</div>
-                    <p style="font-size: 13px; color: #cbd5e1;">Advanced layout effects, scroll-stopping ad style, multi-size (Post + Story). (1-2 Days)</p>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin: 30px 0 20px 0; font-size: 1.3rem; font-weight: 600; color: #f59e0b;">📅 Monthly Plans — Best Value</div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
-                <div style="background: rgba(15, 23, 42, 0.6); border: 1px dashed rgba(245,158,11,0.4); padding: 25px; border-radius: 16px; text-align: center;">
-                    <h4>Starter Plan</h4>
-                    <div style="font-size: 1.8rem; font-weight: bold; margin: 10px 0;">₹3,999<span style="font-size: 14px; color: #94a3b8;">/mo</span></div>
-                    <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 15px;">📊 8 Posts / Month (Mix Design level)</p>
-                    <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20the%20Starter%20Monthly%20Plan." target="_blank" style="padding: 8px 20px; background: #f59e0b; color: #0f172a; border-radius: 5px; text-decoration: none; font-size: 13px; font-weight: 600; display: inline-block;">Subscribe Kit</a>
-                </div>
-                <div style="background: rgba(15, 23, 42, 0.8); border: 2px solid #f59e0b; padding: 25px; border-radius: 16px; text-align: center;">
-                    <h4>Growth Plan</h4>
-                    <div style="font-size: 1.8rem; font-weight: bold; margin: 10px 0;">₹6,999<span style="font-size: 14px; color: #94a3b8;">/mo</span></div>
-                    <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 15px;">🚀 15 Posts / Month (Priority & Premium Work)</p>
-                    <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20the%20Growth%20Monthly%20Plan." target="_blank" style="padding: 8px 20px; background: #f59e0b; color: #0f172a; border-radius: 5px; text-decoration: none; font-size: 13px; font-weight: 600; display: inline-block;">Subscribe Kit</a>
-                </div>
-                <div style="background: rgba(15, 23, 42, 0.6); border: 1px dashed rgba(245,158,11,0.4); padding: 25px; border-radius: 16px; text-align: center;">
-                    <h4>Pro Plan</h4>
-                    <div style="font-size: 1.8rem; font-weight: bold; margin: 10px 0;">₹9,999<span style="font-size: 14px; color: #94a3b8;">/mo</span></div>
-                    <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 15px;">⚡ 25 Posts / Month (Full Premium Designs + Fast Delivery)</p>
-                    <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20the%20Pro%20Monthly%20Plan." target="_blank" style="padding: 8px 20px; background: #f59e0b; color: #0f172a; border-radius: 5px; text-decoration: none; font-size: 13px; font-weight: 600; display: inline-block;">Subscribe Kit</a>
-                </div>
-            </div>
+        <div class="pc-card glass">
+          <div class="pc-tier">Premium</div>
+          <div class="pc-who">Established brands, product companies &amp; businesses wanting a complete professional identity</div>
+          <div class="pc-price">₹<span>4,499</span></div>
+          <ul class="pc-features">
+            <li>3–4 concepts</li>
+            <li>Unlimited revisions (fair use)</li>
+            <li>Logo variations (icon + wordmark)</li>
+            <li>Full files (PNG, JPG, SVG, PDF)</li>
+            <li>Basic brand usage mockups</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 3–5 days</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Premium%20Logo%20Design%20%E2%82%B94%2C499" target="_blank" class="btn-ghost" style="display:block;text-align:center;margin-top:auto;">Get Started</a>
         </div>
 
-        <div id="catalogue-pkg" class="pricing-tab-content" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
-            <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
-                <h4>Basic (6 Pages)</h4>
-                <div style="font-size: 2rem; font-weight: 700; color: #10b981; margin: 15px 0;">₹2,499</div>
-                <p style="font-size: 13px; color: #cbd5e1; line-height: 1.8;">✓ Cover + 5 Inner Pages<br>✓ Clean and Minimal layout<br>✓ 1–2 Revisions<br>✓ Print-Ready PDF</p>
-                <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20the%20Basic%20Catalogue%20Package." target="_blank" style="display:block; text-align:center; background:#10b981; color:#fff; padding:10px; border-radius:8px; text-decoration:none; margin-top:15px;">Get Started</a>
-            </div>
-            <div style="background: rgba(30, 41, 59, 0.9); border: 2px solid #10b981; padding: 30px; border-radius: 16px;">
-                <h4>Standard (12 Pages)</h4>
-                <div style="font-size: 2rem; font-weight: 700; color: #10b981; margin: 15px 0;">₹4,499</div>
-                <p style="font-size: 13px; color: #cbd5e1; line-height: 1.8;">✓ Cover + 11 Inner Pages<br>✓ Professional Visual Flow & Spacing<br>✓ Print PDF + Source File<br>⏱ 2–3 Days Delivery</p>
-                <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20the%20Standard%20Catalogue%20Package." target="_blank" style="display:block; text-align:center; background:#10b981; color:#fff; padding:10px; border-radius:8px; text-decoration:none; margin-top:15px;">Get Started</a>
-            </div>
-            <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
-                <h4>Premium (15+ Pages)</h4>
-                <div style="font-size: 2rem; font-weight: 700; color: #10b981; margin: 15px 0;">₹6,499</div>
-                <p style="font-size: 13px; color: #cbd5e1; line-height: 1.8;">✓ Up to 15 Pages Included<br>✓ Premium Layout Hierarchy & Mockup<br>✓ +₹500 Per Extra Page after 15<br>✓ Print + Source Files</p>
-                <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20the%20Premium%20Catalogue%20Package." target="_blank" style="display:block; text-align:center; background:#10b981; color:#fff; padding:10px; border-radius:8px; text-decoration:none; margin-top:15px;">Get Started</a>
-            </div>
+      </div>
+    </div>
+
+    <!-- ══ POSTER ══ -->
+    <div class="price-panel" id="panel-poster" style="display:none">
+      <div class="pc-subtitle">Poster Design Packages</div>
+      <div class="pc-grid three">
+
+        <div class="pc-card glass">
+          <div class="pc-tier">Basic</div>
+          <div class="pc-who">Individual sellers, home businesses &amp; anyone needing a quick, clean promotional post</div>
+          <div class="pc-price">₹<span>499</span></div>
+          <ul class="pc-features">
+            <li>1 concept</li>
+            <li>1–2 revisions</li>
+            <li>Basic layout (text + image)</li>
+            <li>JPG/PNG (social media size)</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 24 hours</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Basic%20Poster%20Design%20%E2%82%B9499" target="_blank" class="btn-ghost" style="display:block;text-align:center;margin-top:auto;">Get Started</a>
         </div>
 
-        <div id="ai-video-pkg" class="pricing-tab-content" style="display: none;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 30px;">
-                <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
-                    <h4>Basic Video (30s)</h4>
-                    <div style="font-size: 2rem; font-weight: 700; color: #a855f7; margin: 15px 0;">₹1,999</div>
-                    <p style="font-size: 13px; color: #cbd5e1; line-height: 1.8;">✓ Basic AI Visuals (Image/Text to Video)<br>✓ Light Text Overlay & HD Export<br>✓ 1–2 Revisions</p>
-                </div>
-                <div style="background: rgba(30, 41, 59, 0.9); border: 2px solid #a855f7; padding: 30px; border-radius: 16px;">
-                    <h4>Standard Video (60s)</h4>
-                    <div style="font-size: 2rem; font-weight: 700; color: #a855f7; margin: 15px 0;">₹3,999</div>
-                    <p style="font-size: 13px; color: #cbd5e1; line-height: 1.8;">✓ Smooth Scene Flow & Motion Consistency<br>✓ Text Animation + Perfect Music Sync<br>✓ 2–3 Revisions</p>
-                </div>
-                <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
-                    <h4>Premium Video (90s+)</h4>
-                    <div style="font-size: 2rem; font-weight: 700; color: #a855f7; margin: 15px 0;">₹5,999</div>
-                    <p style="font-size: 13px; color: #cbd5e1; line-height: 1.8;">✓ Concept Planning (Basic Storytelling)<br>✓ Advanced Effects & Premium Transitions<br>✓ Unlimited Revisions (Fair Use)</p>
-                </div>
-            </div>
-            
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 20px; border-radius: 12px; max-width: 600px; margin: 0 auto; text-align: center;">
-                <div
+        <div class="pc-card glass pc-featured">
+          <div class="pc-badge">⭐ Recommended</div>
+          <div class="pc-tier">Standard</div>
+          <div class="pc-who">Small brands, local businesses &amp; D2C sellers wanting eye-catching marketing creatives</div>
+          <div class="pc-price">₹<span>999</span></div>
+          <ul class="pc-features">
+            <li>2 concepts</li>
+            <li>3–4 revisions</li>
+            <li>Better composition + typography</li>
+            <li>Platform-specific sizes (Insta/Facebook)</li>
+            <li>High-quality export</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 24 hours</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Standard%20Poster%20Design%20%E2%82%B9999" target="_blank" class="btn-pink" style="display:block;text-align:center;">Get Started</a>
+        </div>
+
+        <div class="pc-card glass">
+          <div class="pc-tier">Premium</div>
+          <div class="pc-who">Product brands, e-commerce stores &amp; businesses running paid ad campaigns</div>
+          <div class="pc-price">₹<span>1,999</span></div>
+          <ul class="pc-features">
+            <li>2–3 concepts</li>
+            <li>Multiple revisions (fair use)</li>
+            <li>Advanced layout + effects</li>
+            <li>Ad-style creative (attention-grabbing)</li>
+            <li>Mockups / presentation style preview</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 1–2 days</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Premium%20Poster%20Design%20%E2%82%B91%2C999" target="_blank" class="btn-ghost" style="display:block;text-align:center;margin-top:auto;">Get Started</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ SOCIAL MEDIA ══ -->
+    <div class="price-panel" id="panel-social" style="display:none">
+      <div class="pc-subtitle">Social Media Design Packages</div>
+
+      <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:16px;">Single Post Packages</div>
+      <div class="pc-grid three" style="margin-bottom:40px;">
+
+        <div class="pc-card glass">
+          <div class="pc-tier">Basic Social Post</div>
+          <div class="pc-who">New businesses testing the waters or needing occasional one-off social posts</div>
+          <div class="pc-price">₹<span>499</span></div>
+          <ul class="pc-features">
+            <li>1 design concept</li>
+            <li>1–2 revisions</li>
+            <li>Basic layout (image + text placement)</li>
+            <li>Single platform size (Instagram post)</li>
+            <li>JPG/PNG delivery</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 24 hours</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Basic%20Social%20Post%20%E2%82%B9499" target="_blank" class="btn-ghost" style="display:block;text-align:center;margin-top:auto;">Get Started</a>
+        </div>
+
+        <div class="pc-card glass pc-featured">
+          <div class="pc-badge">⭐ Recommended</div>
+          <div class="pc-tier">Standard Social Post</div>
+          <div class="pc-who">Growing brands, local businesses &amp; D2C sellers wanting consistent, quality social content</div>
+          <div class="pc-price">₹<span>999</span></div>
+          <ul class="pc-features">
+            <li>2 design concepts</li>
+            <li>3–4 revisions</li>
+            <li>Creative layout + better typography</li>
+            <li>Platform optimization (Instagram + Facebook)</li>
+            <li>High-quality export (JPG/PNG)</li>
+            <li>Basic brand color usage</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 24 hours</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Standard%20Social%20Post%20%E2%82%B9999" target="_blank" class="btn-pink" style="display:block;text-align:center;">Get Started</a>
+        </div>
+
+        <div class="pc-card glass">
+          <div class="pc-tier">Premium Social Post</div>
+          <div class="pc-who">Brands running ads, product launches or wanting scroll-stopping premium creatives</div>
+          <div class="pc-price">₹<span>1,999</span></div>
+          <ul class="pc-features">
+            <li>2–3 concepts</li>
+            <li>Multiple revisions (fair use)</li>
+            <li>Advanced design (effects, composition, hierarchy)</li>
+            <li>Scroll-stopping ad style</li>
+            <li>Multiple sizes (post + story)</li>
+            <li>Mockup / presentation preview</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 1–2 days</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Premium%20Social%20Post%20%E2%82%B91%2C999" target="_blank" class="btn-ghost" style="display:block;text-align:center;margin-top:auto;">Get Started</a>
+        </div>
+
+      </div>
+
+      <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:16px;">Monthly Plans — Best Value</div>
+      <div class="pc-grid three">
+
+        <div class="pc-card glass">
+          <div class="pc-badge" style="background:rgba(16,185,129,0.25);color:#6ee7b7;border:1px solid rgba(16,185,129,0.3);">Highly Recommended</div>
+          <div class="pc-tier">Starter Plan</div>
+          <div class="pc-who">Small businesses &amp; startups building their social presence from scratch</div>
+          <div class="pc-price">₹<span>3,999</span><span style="font-size:14px;color:rgba(255,255,255,0.4);font-family:'DM Sans',sans-serif;">/mo</span></div>
+          <ul class="pc-features">
+            <li>8 posts/month</li>
+            <li>Basic–Standard mix designs</li>
+          </ul>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Starter%20Monthly%20Plan%20%E2%82%B93%2C999%2Fmo" target="_blank" class="btn-ghost" style="display:block;text-align:center;margin-top:auto;">Get Started</a>
+        </div>
+
+        <div class="pc-card glass pc-featured">
+          <div class="pc-badge">⭐ Recommended</div>
+          <div class="pc-tier">Growth Plan</div>
+          <div class="pc-who">Active brands, D2C businesses &amp; local stores wanting consistent high-quality content</div>
+          <div class="pc-price">₹<span>6,999</span><span style="font-size:14px;color:rgba(255,255,255,0.4);font-family:'DM Sans',sans-serif;">/mo</span></div>
+          <ul class="pc-features">
+            <li>15 posts/month</li>
+            <li>Better creatives + priority work</li>
+          </ul>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Growth%20Monthly%20Plan%20%E2%82%B96%2C999%2Fmo" target="_blank" class="btn-pink" style="display:block;text-align:center;">Get Started</a>
+        </div>
+
+        <div class="pc-card glass">
+          <div class="pc-tier">Pro Plan</div>
+          <div class="pc-who">Established brands, agencies &amp; businesses running full social media marketing</div>
+          <div class="pc-price">₹<span>9,999</span><span style="font-size:14px;color:rgba(255,255,255,0.4);font-family:'DM Sans',sans-serif;">/mo</span></div>
+          <ul class="pc-features">
+            <li>25 posts/month</li>
+            <li>Premium-style designs + faster delivery</li>
+          </ul>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Pro%20Monthly%20Plan%20%E2%82%B99%2C999%2Fmo" target="_blank" class="btn-ghost" style="display:block;text-align:center;margin-top:auto;">Get Started</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ CATALOGUE ══ -->
+    <div class="price-panel" id="panel-catalogue" style="display:none">
+      <div class="pc-subtitle">Catalogue Design Packages</div>
+      <div class="pc-grid three">
+
+        <div class="pc-card glass">
+          <div class="pc-tier">Basic <span style="font-size:12px;color:rgba(255,255,255,0.4);">6 Pages</span></div>
+          <div class="pc-who">Small businesses, home brands &amp; local shops needing a simple product catalogue</div>
+          <div class="pc-price">₹<span>2,499</span></div>
+          <ul class="pc-features">
+            <li>Cover + 5 inner pages</li>
+            <li>Clean and minimal layout</li>
+            <li>Basic typography</li>
+            <li>1–2 revisions</li>
+            <li>Print-ready PDF</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 1–2 days</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Basic%20Catalogue%20Design%20%E2%82%B92%2C499" target="_blank" class="btn-ghost" style="display:block;text-align:center;margin-top:auto;">Get Started</a>
+        </div>
+
+        <div class="pc-card glass pc-featured">
+          <div class="pc-badge">⭐ Recommended</div>
+          <div class="pc-tier">Standard <span style="font-size:12px;color:rgba(255,255,255,0.4);">12 Pages</span></div>
+          <div class="pc-who">Growing product businesses, retailers &amp; brands wanting a professional sales catalogue</div>
+          <div class="pc-price">₹<span>4,999</span></div>
+          <ul class="pc-features">
+            <li>Cover + 11 inner pages</li>
+            <li>Better visual flow</li>
+            <li>Proper spacing &amp; alignment</li>
+            <li>2–3 revisions</li>
+            <li>Print-ready PDF + source file</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 2–3 days</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Standard%20Catalogue%20Design%20%E2%82%B94%2C999" target="_blank" class="btn-pink" style="display:block;text-align:center;">Get Started</a>
+        </div>
+
+        <div class="pc-card glass">
+          <div class="pc-tier">Premium <span style="font-size:12px;color:rgba(255,255,255,0.4);">15+ Pages</span></div>
+          <div class="pc-who">Established brands, wholesalers &amp; businesses with large product ranges</div>
+          <div class="pc-price">₹<span>6,499</span></div>
+          <ul class="pc-features">
+            <li>Up to 15 pages included</li>
+            <li>Advanced layout styling</li>
+            <li>Better typography hierarchy</li>
+            <li>Premium cover design</li>
+            <li>Multiple revisions</li>
+            <li>Print-ready + source file + mockup preview</li>
+          </ul>
+          <div style="font-size:12px;color:rgba(233,30,140,0.8);margin-bottom:10px;">+ ₹500 per extra page after 15</div>
+          <div class="pc-timeline">⏱ Timeline: 3–4 days</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Premium%20Catalogue%20Design%20%E2%82%B96%2C499" target="_blank" class="btn-ghost" style="display:block;text-align:center;margin-top:auto;">Get Started</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ AI VIDEO ══ -->
+    <div class="price-panel" id="panel-aivideo" style="display:none">
+      <div class="pc-subtitle">AI Video Creation Packages</div>
+      <div class="pc-grid three" style="margin-bottom:30px;">
+
+        <div class="pc-card glass">
+          <div class="pc-tier">Basic Video <span style="font-size:12px;color:rgba(255,255,255,0.4);">30 sec</span></div>
+          <div class="pc-who">Small businesses, local shops &amp; startups wanting their first product promo video</div>
+          <div class="pc-price">₹<span>1,999</span></div>
+          <ul class="pc-features">
+            <li>Basic AI visuals (image-to-video / text-to-video)</li>
+            <li>Light text overlay</li>
+            <li>Basic transitions</li>
+            <li>1–2 revisions</li>
+            <li>Full HD export</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 1–2 days</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Basic%20AI%20Video%20%E2%82%B91%2C999" target="_blank" class="btn-ghost" style="display:block;text-align:center;margin-top:auto;">Get Started</a>
+        </div>
+
+        <div class="pc-card glass pc-featured">
+          <div class="pc-badge">⭐ Recommended</div>
+          <div class="pc-tier">Standard Video <span style="font-size:12px;color:rgba(255,255,255,0.4);">60 sec</span></div>
+          <div class="pc-who">D2C brands, product sellers &amp; businesses running social media ad campaigns</div>
+          <div class="pc-price">₹<span>3,999</span></div>
+          <ul class="pc-features">
+            <li>Better scene flow</li>
+            <li>AI visuals + motion consistency</li>
+            <li>Text animation + music sync</li>
+            <li>2–3 revisions</li>
+            <li>Full HD export</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 2–3 days</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Standard%20AI%20Video%20%E2%82%B93%2C999" target="_blank" class="btn-pink" style="display:block;text-align:center;">Get Started</a>
+        </div>
+
+        <div class="pc-card glass">
+          <div class="pc-tier">Premium Video <span style="font-size:12px;color:rgba(255,255,255,0.4);">90+ sec</span></div>
+          <div class="pc-who">Established brands, product launches &amp; businesses wanting cinematic brand storytelling</div>
+          <div class="pc-price">₹<span>5,999</span></div>
+          <ul class="pc-features">
+            <li>Concept planning (basic storytelling)</li>
+            <li>Multiple scenes with smoother transitions</li>
+            <li>Better pacing + visual consistency</li>
+            <li>Text + music + effects sync</li>
+            <li>Multiple revisions (fair use)</li>
+            <li>Full HD export</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 3–4 days</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Premium%20AI%20Video%20%E2%82%B95%2C999" target="_blank" class="btn-ghost" style="display:block;text-align:center;margin-top:auto;">Get Started</a>
+        </div>
+
+      </div>
+
+      <!-- Add-ons -->
+      <div class="glass" style="padding:24px 28px;">
+        <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:16px;">Add-ons</div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;">
+          <div style="padding:12px 20px;border-radius:12px;background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);font-size:13px;">🎙️ Voiceover (AI) &nbsp;<strong style="color:#e91e8c;">+₹1,000</strong></div>
+          <div style="padding:12px 20px;border-radius:12px;background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);font-size:13px;">✍️ Script writing &nbsp;<strong style="color:#e91e8c;">+₹1,000</strong></div>
+          <div style="padding:12px 20px;border-radius:12px;background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);font-size:13px;">🔄 Extra revision &nbsp;<strong style="color:#e91e8c;">+₹300</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ PACKAGING ══ -->
+    <div class="price-panel" id="panel-packaging" style="display:none">
+      <div class="pc-subtitle">Label &amp; Packaging Design</div>
+      <div class="pc-grid three">
+
+        <div class="pc-card glass">
+          <div class="pc-tier">Basic Label</div>
+          <div class="pc-who">Home businesses, small food brands &amp; startups needing a basic product label</div>
+          <div class="pc-price">₹<span>1,999</span></div>
+          <ul class="pc-features">
+            <li>1 concept</li>
+            <li>Basic layout (logo + product info placement)</li>
+            <li>2 revisions</li>
+            <li>Single label size</li>
+            <li>Print-ready file (JPG/PDF/AI)</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 1–2 days</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Basic%20Label%20Design%20%E2%82%B91%2C999" target="_blank" class="btn-ghost" style="display:block;text-align:center;margin-top:auto;">Get Started</a>
+        </div>
+
+        <div class="pc-card glass pc-featured">
+          <div class="pc-badge">⭐ Recommended</div>
+          <div class="pc-tier">Standard Packaging</div>
+          <div class="pc-who">Growing product brands, D2C sellers &amp; small manufacturers wanting professional packaging</div>
+          <div class="pc-price">₹<span>3,999</span></div>
+          <ul class="pc-features">
+            <li>2 concepts</li>
+            <li>Better layout + hierarchy</li>
+            <li>3–4 revisions</li>
+            <li>Print-ready + source file</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 3 days</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Standard%20Packaging%20Design%20%E2%82%B93%2C999" target="_blank" class="btn-pink" style="display:block;text-align:center;">Get Started</a>
+        </div>
+
+        <div class="pc-card glass">
+          <div class="pc-tier">Premium Packaging</div>
+          <div class="pc-who">Established FMCG brands, premium product lines &amp; businesses wanting shelf-ready packaging</div>
+          <div class="pc-price">₹<span>6,999</span></div>
+          <ul class="pc-features">
+            <li>3 concepts</li>
+            <li>Full packaging design (box/pouch/wrap)</li>
+            <li>Strong visual styling + detailing</li>
+            <li>Multiple revisions (fair use)</li>
+            <li>Print-ready + source + mockup presentation</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 5 days</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Premium%20Packaging%20Design%20%E2%82%B96%2C999" target="_blank" class="btn-ghost" style="display:block;text-align:center;margin-top:auto;">Get Started</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ BUNDLES ══ -->
+    <div class="price-panel" id="panel-bundles" style="display:none">
+      <div class="pc-subtitle">Complete Design Packages</div>
+      <p style="font-size:14px;color:rgba(255,255,255,0.4);margin-bottom:32px;">Everything your brand needs, bundled together at the best price.</p>
+      <div class="pc-grid two">
+
+        <div class="pc-card glass" style="padding:36px 30px;">
+          <div class="pc-tier" style="font-size:22px;">Starter Brand Kit</div>
+          <div class="pc-who">New businesses, local startups &amp; solo entrepreneurs launching their brand from scratch</div>
+          <div class="pc-price">₹<span>7,999</span></div>
+          <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:10px;">Includes</div>
+          <ul class="pc-features">
+            <li>Logo (Basic–Standard level)</li>
+            <li>3 Social Media Posters</li>
+            <li>1 Promotional Poster</li>
+            <li>Basic Label Design</li>
+            <li>15-sec AI Video</li>
+          </ul>
+          <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin:16px 0 10px;">Delivery</div>
+          <ul class="pc-features">
+            <li>All files (JPG/PNG + basic source files)</li>
+            <li>2–3 revision rounds overall</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 7 days</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Starter%20Brand%20Kit%20%E2%82%B97%2C999" target="_blank" class="btn-ghost" style="display:block;text-align:center;margin-top:auto;">Get Started</a>
+        </div>
+
+        <div class="pc-card glass pc-featured" style="padding:36px 30px;">
+          <div class="pc-badge">⭐ Most Popular</div>
+          <div class="pc-tier" style="font-size:22px;">Growth Brand Kit</div>
+          <div class="pc-who">Growing product brands, D2C businesses &amp; companies wanting a complete, consistent brand identity across all platforms</div>
+          <div class="pc-price">₹<span>14,999</span></div>
+          <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:10px;">Includes</div>
+          <ul class="pc-features">
+            <li>Logo (Standard–Premium level)</li>
+            <li>8 Social Media Posts</li>
+            <li>2 Promotional Posters</li>
+            <li>Packaging Design (front + back)</li>
+            <li>30-sec AI Video</li>
+            <li>6–8 Page Catalogue</li>
+          </ul>
+          <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin:16px 0 10px;">Delivery</div>
+          <ul class="pc-features">
+            <li>Full files (PNG, JPG, PDF, source files)</li>
+            <li>Better design consistency across all items</li>
+            <li>Priority revisions</li>
+          </ul>
+          <div class="pc-timeline">⏱ Timeline: 7–10 days</div>
+          <a href="https://wa.me/916399799895?text=Hi%20Dipanshu!%20I%20want%20Growth%20Brand%20Kit%20%E2%82%B914%2C999" target="_blank" class="btn-pink" style="display:block;text-align:center;">Get Started</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div style="margin-top:32px; padding:20px 28px; border-radius:14px; background:rgba(245,158,11,0.07); border:1px solid rgba(245,158,11,0.18); font-size:13px; color:rgba(255,255,255,0.5); text-align:center;">
+      💬 Custom requirement hai? Seedha WhatsApp karo — <a href="https://wa.me/916399799895" target="_blank" style="color:#fcd34d; text-decoration:none; font-weight:500;">+91 63997 99895</a>
+    </div>
+  </section>
+
   <!-- ── EXPERIENCE ── -->
   <section class="section" id="experience">
     <div class="sec-label">Experience</div>
@@ -1066,6 +1454,13 @@
 </footer>
 
 <script>
+  function priceTab(el, panel) {
+    document.querySelectorAll('#priceTabs .tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    document.querySelectorAll('.price-panel').forEach(p => p.style.display = 'none');
+    document.getElementById('panel-' + panel).style.display = 'block';
+  }
+
   function filterTab(el, cat) {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     el.classList.add('active');
